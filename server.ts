@@ -27,8 +27,21 @@ app.use("/uploads", express.static(uploadsDir));
 // Initialize MongoDB Connection
 connectMongoDB().catch(err => console.error("[MongoDB] Initial connect error:", err));
 
+// Auto-reconnect middleware for API requests if disconnected
+app.use(async (req, res, next) => {
+  if (req.path.startsWith("/api") && req.path !== "/api/db-status") {
+    if (mongoose.connection.readyState !== 1) {
+      await connectMongoDB();
+    }
+  }
+  next();
+});
+
 // DB Health Check Endpoint
-app.get("/api/db-status", (req, res) => {
+app.get("/api/db-status", async (req, res) => {
+  if (mongoose.connection.readyState !== 1) {
+    await connectMongoDB();
+  }
   res.json({
     connected: mongoose.connection.readyState === 1,
     status: mongoose.connection.readyState === 1 ? "Connected to MongoDB" : "Disconnected",

@@ -1,17 +1,23 @@
 import mongoose from "mongoose";
 
 export async function connectMongoDB() {
-  const uri = process.env.MONGODB_URI?.trim();
-  if (!uri) {
+  const rawUri = process.env.MONGODB_URI?.trim();
+  if (!rawUri) {
     console.log("[MongoDB] No MONGODB_URI configured. Database connection skipped.");
     return null;
   }
+  const uri = rawUri.replace(/^["']|["']$/g, '').trim();
   try {
-    if (mongoose.connection.readyState >= 1) {
+    if (mongoose.connection.readyState === 1) {
+      return mongoose.connection;
+    }
+    // If already connecting, wait for it
+    if (mongoose.connection.readyState === 2) {
       return mongoose.connection;
     }
     await mongoose.connect(uri, {
-      serverSelectionTimeoutMS: 15000
+      serverSelectionTimeoutMS: 15000,
+      connectTimeoutMS: 15000
     });
     console.log("==================================================");
     console.log("[MongoDB] Connected to MongoDB successfully!");
