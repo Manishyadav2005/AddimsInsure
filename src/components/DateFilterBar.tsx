@@ -134,12 +134,12 @@ export default function DateFilterBar({
   return (
     <div className="bg-white border border-slate-200/90 rounded-2xl p-3 shadow-xs flex flex-wrap items-center justify-between gap-3">
       <div className="flex flex-wrap items-center gap-3">
-        <div className="p-2 bg-[#DFBFBA]/20 border border-[#DFBFBA]/60 text-[#660000] rounded-xl shrink-0">
+        <div className="p-2 bg-red-100 border border-red-200 text-[#660000] rounded-xl shrink-0">
           <Calendar className="w-4 h-4" />
         </div>
 
         {/* Month Selector */}
-        <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 focus-within:border-[#660000] transition">
+        <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 focus-within:border-[#660000] focus-within:ring-2 focus-within:ring-red-100 transition">
           <span className="text-xs font-medium text-slate-500">Month:</span>
           <input
             type="month"
@@ -157,7 +157,7 @@ export default function DateFilterBar({
         <span className="text-xs font-normal text-slate-400">or</span>
 
         {/* From Date & To Date Range */}
-        <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 focus-within:border-[#660000] transition">
+        <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 focus-within:border-[#660000] focus-within:ring-2 focus-within:ring-red-100 transition">
           <div className="flex items-center gap-1.5">
             <span className="text-xs font-medium text-slate-500">From:</span>
             <input
@@ -189,13 +189,13 @@ export default function DateFilterBar({
 
         {/* Quick Filter Dropdown */}
         {setQuickFilter !== undefined ? (
-          <div className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 shrink-0 focus-within:border-[#660000] transition">
+          <div className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 shrink-0 focus-within:border-[#660000] focus-within:ring-2 focus-within:ring-red-100 transition">
             <span className="text-xs font-medium text-slate-500 whitespace-nowrap">Quick:</span>
             <select
               value={quickFilter || ""}
               onChange={(e) => handleQuickChange(e.target.value as any)}
               className={`bg-transparent text-xs font-normal focus:outline-none cursor-pointer ${
-                quickFilter ? "text-[#660000] font-semibold" : "text-slate-700"
+                quickFilter ? "text-[#660000] font-bold" : "text-slate-700"
               }`}
             >
               <option value="">None</option>
@@ -214,7 +214,7 @@ export default function DateFilterBar({
         type="button"
         onClick={handleClear}
         title={hasActiveFilter ? "Clear Filters" : "Refresh / Reload Data"}
-        className="p-2 bg-[#DFBFBA]/20 hover:bg-[#DFBFBA]/50 text-[#660000] border border-[#DFBFBA] rounded-xl transition flex items-center justify-center cursor-pointer shadow-2xs shrink-0 ml-auto"
+        className="p-2 bg-red-100 hover:bg-red-200 text-[#660000] border border-red-200 rounded-xl transition flex items-center justify-center cursor-pointer shadow-2xs shrink-0 ml-auto"
       >
         <RefreshCcw className="w-4 h-4 text-[#660000]" />
       </button>

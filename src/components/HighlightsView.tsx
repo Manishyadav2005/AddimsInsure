@@ -274,7 +274,7 @@ export default function HighlightsView({ user: _user }: HighlightsViewProps) {
                 <div
                   className={`rounded-2xl p-5 sm:p-6 shadow-md relative overflow-hidden flex flex-col md:flex-row items-stretch justify-between gap-5 border h-[180px] sm:h-[240px] md:h-[270px] lg:h-[280px] ${
                     currentBanner.type === "BIRTHDAY"
-                      ? "bg-gradient-to-r from-rose-950 via-rose-900 to-pink-950 text-white border-rose-800"
+                      ? "bg-gradient-to-r from-rose-950 via-rose-900 to-red-950 text-white border-rose-800"
                       : currentBanner.type === "EVENT"
                       ? "bg-gradient-to-r from-indigo-950 via-slate-900 to-blue-950 text-white border-indigo-800"
                       : currentBanner.type === "RECOGNITION"
@@ -435,8 +435,8 @@ export default function HighlightsView({ user: _user }: HighlightsViewProps) {
                 key={b.id}
                 className={`border rounded-xl p-3.5 shadow-2xs flex items-center justify-between gap-3 transition ${
                   b.isToday
-                    ? "bg-gradient-to-r from-rose-100/90 to-pink-100/80 border-rose-300 shadow-sm"
-                    : "bg-gradient-to-r from-rose-50/50 to-pink-50/30 border-rose-200/80 hover:border-rose-300"
+                    ? "bg-gradient-to-r from-rose-100/90 to-red-100/80 border-rose-300 shadow-sm"
+                    : "bg-gradient-to-r from-rose-50/50 to-red-50/30 border-rose-200/80 hover:border-rose-300"
                 }`}
               >
                 <div className="flex items-center gap-3 min-w-0">

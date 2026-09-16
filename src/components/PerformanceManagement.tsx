@@ -713,7 +713,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-3">
-              <div className="p-2.5 bg-[#DFBFBA]/30 border border-[#DFBFBA]/60 rounded-xl text-[#660000]">
+              <div className="p-2.5 bg-[#FECACA]/30 border border-[#FECACA]/60 rounded-xl text-[#660000]">
                 <Target className="w-5 h-5" />
               </div>
               <div>
@@ -729,7 +729,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
 
           <div className="flex flex-wrap items-center gap-3">
             {/* MONTH CALENDAR PICKER */}
-            <div className="flex items-center bg-[#DFBFBA]/20 border border-[#DFBFBA]/60 rounded-xl px-3.5 py-2 shadow-2xs gap-2">
+            <div className="flex items-center bg-[#FECACA]/20 border border-[#FECACA]/60 rounded-xl px-3.5 py-2 shadow-2xs gap-2">
               <span className="text-xs font-semibold text-[#660000] uppercase tracking-wider">MONTH:</span>
               <input
                 type="month"
@@ -742,7 +742,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
             <button
               onClick={handleExportReport}
               disabled={loading || !data}
-              className="px-4 py-2 bg-white hover:bg-[#DFBFBA]/20 text-[#660000] border border-[#DFBFBA]/80 rounded-xl text-xs font-semibold flex items-center gap-2 transition cursor-pointer disabled:opacity-50 shadow-2xs"
+              className="px-4 py-2 bg-white hover:bg-[#FECACA]/20 text-[#660000] border border-[#FECACA]/80 rounded-xl text-xs font-semibold flex items-center gap-2 transition cursor-pointer disabled:opacity-50 shadow-2xs"
             >
               <Download className="w-4 h-4 text-[#660000]" />
               <span>Export Report</span>
@@ -831,8 +831,8 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
               onClick={() => setActiveSubTab(tab.id as any)}
               className={`px-4 py-2.5 text-xs font-semibold flex items-center gap-2 border-b-2 transition cursor-pointer shrink-0 ${
                 isActive
-                  ? "border-[#660000] text-[#660000] bg-[#DFBFBA]/30 rounded-t-xl"
-                  : "border-transparent text-slate-600 hover:text-slate-900 hover:bg-[#DFBFBA]/15 rounded-t-xl"
+                  ? "border-[#660000] text-[#660000] bg-[#FECACA]/30 rounded-t-xl"
+                  : "border-transparent text-slate-600 hover:text-slate-900 hover:bg-[#FECACA]/15 rounded-t-xl"
               }`}
             >
               <Icon className={`w-4 h-4 ${isActive ? "text-[#660000]" : "text-slate-400"}`} />
@@ -925,7 +925,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                         </>
                       )}
                     </div>
-                    <div className="w-10 h-10 bg-[#DFBFBA]/30 text-[#660000] border border-[#DFBFBA]/60 rounded-xl flex items-center justify-center shrink-0 shadow-2xs my-auto">
+                    <div className="w-10 h-10 bg-[#FECACA]/30 text-[#660000] border border-[#FECACA]/60 rounded-xl flex items-center justify-center shrink-0 shadow-2xs my-auto">
                       <Target className="w-5 h-5 stroke-[2]" />
                     </div>
                   </div>
@@ -945,7 +945,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                         {fmtCurr(activeSummary.achievement)}
                       </span>
                     </div>
-                    <div className="w-10 h-10 bg-[#DFBFBA]/30 text-[#660000] border border-[#DFBFBA]/60 rounded-xl flex items-center justify-center shrink-0 shadow-2xs my-auto">
+                    <div className="w-10 h-10 bg-[#FECACA]/30 text-[#660000] border border-[#FECACA]/60 rounded-xl flex items-center justify-center shrink-0 shadow-2xs my-auto">
                       <TrendingUp className="w-5 h-5 stroke-[2]" />
                     </div>
                   </div>
@@ -959,14 +959,14 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                       <span className="text-lg sm:text-xl font-bold text-[#660000] tracking-tight block font-mono whitespace-nowrap">
                         {activeSummary.achievementPercentage}%
                       </span>
-                      <div className="w-full bg-[#DFBFBA]/30 h-1.5 rounded-full overflow-hidden mt-1.5">
+                      <div className="w-full bg-[#FECACA]/30 h-1.5 rounded-full overflow-hidden mt-1.5">
                         <div
                           className="bg-[#660000] h-full rounded-full transition-all duration-300"
                           style={{ width: `${Math.min(100, activeSummary.achievementPercentage)}%` }}
                         />
                       </div>
                     </div>
-                    <div className="w-10 h-10 bg-[#DFBFBA]/30 text-[#660000] border border-[#DFBFBA]/60 rounded-xl flex items-center justify-center shrink-0 shadow-2xs my-auto">
+                    <div className="w-10 h-10 bg-[#FECACA]/30 text-[#660000] border border-[#FECACA]/60 rounded-xl flex items-center justify-center shrink-0 shadow-2xs my-auto">
                       <Award className="w-5 h-5 stroke-[2]" />
                     </div>
                   </div>
@@ -986,7 +986,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                         {fmtCurr(activeSummary.remainingTarget)}
                       </span>
                     </div>
-                    <div className="w-10 h-10 bg-[#DFBFBA]/30 text-[#660000] border border-[#DFBFBA]/60 rounded-xl flex items-center justify-center shrink-0 shadow-2xs my-auto">
+                    <div className="w-10 h-10 bg-[#FECACA]/30 text-[#660000] border border-[#FECACA]/60 rounded-xl flex items-center justify-center shrink-0 shadow-2xs my-auto">
                       <Clock className="w-5 h-5 stroke-[2]" />
                     </div>
                   </div>
@@ -1081,7 +1081,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
 
                           <td className="px-3.5 py-3 text-center">
                             {emp.hasTargetAssigned && mtdTgt > 0 ? (
-                              <span className="px-2.5 py-0.5 bg-[#DFBFBA]/30 text-[#660000] border border-[#DFBFBA]/80 rounded-md text-[10px] font-semibold">
+                              <span className="px-2.5 py-0.5 bg-[#FECACA]/30 text-[#660000] border border-[#FECACA]/80 rounded-md text-[10px] font-semibold">
                                 Assigned
                               </span>
                             ) : (
@@ -1095,7 +1095,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                             <div className="flex items-center justify-end gap-1.5">
                               <button
                                 onClick={() => handleEditTarget(emp)}
-                                className="px-3 py-1 bg-white hover:bg-[#DFBFBA]/20 text-[#660000] border border-[#DFBFBA]/80 rounded-lg text-[11px] font-semibold flex items-center gap-1 transition cursor-pointer"
+                                className="px-3 py-1 bg-white hover:bg-[#FECACA]/20 text-[#660000] border border-[#FECACA]/80 rounded-lg text-[11px] font-semibold flex items-center gap-1 transition cursor-pointer"
                                 title="Edit Target"
                               >
                                 <Edit className="w-3 h-3" />
@@ -1216,7 +1216,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                             {hasMtdTgt ? (
                               <div className="flex items-center justify-center gap-1.5">
                                 <span>{mtdPct}%</span>
-                                <div className="w-12 bg-[#DFBFBA]/30 h-1.5 rounded-full overflow-hidden shrink-0">
+                                <div className="w-12 bg-[#FECACA]/30 h-1.5 rounded-full overflow-hidden shrink-0">
                                   <div className="bg-[#660000] h-full rounded-full" style={{ width: `${Math.min(100, mtdPct)}%` }} />
                                 </div>
                               </div>
@@ -1241,7 +1241,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                           <td className="px-3.5 py-3 text-center">
                             <span className={`px-2.5 py-0.5 rounded-md text-[10px] font-semibold ${
                               !hasMtdTgt ? "bg-slate-100 text-slate-600 border border-slate-200" :
-                              emp.status === "Excellent" || emp.status === "On Track" ? "bg-[#DFBFBA]/30 text-[#660000] border border-[#DFBFBA]/80" :
+                              emp.status === "Excellent" || emp.status === "On Track" ? "bg-[#FECACA]/30 text-[#660000] border border-[#FECACA]/80" :
                               emp.status === "Needs Attention" ? "bg-amber-50 text-amber-800 border border-amber-200/80" :
                               "bg-red-50 text-red-800 border border-red-200"
                             }`}>
@@ -1251,7 +1251,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                           <td className="px-3.5 py-3 text-right" onClick={(e) => e.stopPropagation()}>
                             <button
                               onClick={() => setSelectedEmpDetail(emp)}
-                              className="px-2.5 py-1 bg-white hover:bg-[#DFBFBA]/20 text-[#660000] border border-[#DFBFBA]/80 rounded-lg text-[11px] font-semibold flex items-center gap-1 transition cursor-pointer ml-auto"
+                              className="px-2.5 py-1 bg-white hover:bg-[#FECACA]/20 text-[#660000] border border-[#FECACA]/80 rounded-lg text-[11px] font-semibold flex items-center gap-1 transition cursor-pointer ml-auto"
                             >
                               <Eye className="w-3 h-3" />
                               <span>Details</span>
@@ -1282,7 +1282,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                     <button
                       onClick={() => setEmpPage(p => Math.max(1, p - 1))}
                       disabled={empPage === 1}
-                      className="px-3 py-1 bg-white hover:bg-[#DFBFBA]/20 text-[#660000] border border-[#DFBFBA]/80 rounded-lg disabled:opacity-40 cursor-pointer"
+                      className="px-3 py-1 bg-white hover:bg-[#FECACA]/20 text-[#660000] border border-[#FECACA]/80 rounded-lg disabled:opacity-40 cursor-pointer"
                     >
                       Prev
                     </button>
@@ -1290,7 +1290,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                     <button
                       onClick={() => setEmpPage(p => Math.min(totalEmpPages, p + 1))}
                       disabled={empPage === totalEmpPages}
-                      className="px-3 py-1 bg-white hover:bg-[#DFBFBA]/20 text-[#660000] border border-[#DFBFBA]/80 rounded-lg disabled:opacity-40 cursor-pointer"
+                      className="px-3 py-1 bg-white hover:bg-[#FECACA]/20 text-[#660000] border border-[#FECACA]/80 rounded-lg disabled:opacity-40 cursor-pointer"
                     >
                       Next
                     </button>
@@ -1416,7 +1416,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                             </tr>
                           )}
 
-                          <tr className="bg-[#DFBFBA]/20 font-semibold text-slate-900 border-t border-[#DFBFBA]">
+                          <tr className="bg-[#FECACA]/20 font-semibold text-slate-900 border-t border-[#FECACA]">
                             <td colSpan={2} className="px-3.5 py-2.5 text-[#660000] font-semibold">TOTAL {team.teamName.toUpperCase()}</td>
                             <td className="px-3.5 py-2.5 text-right">{tMtdTgt > 0 ? fmtLakhs(tMtdTgt) : "Target not assigned"}</td>
                             <td className="px-3.5 py-2.5 text-right text-[#660000] font-semibold">{tMtdAch > 0 ? fmtLakhs(tMtdAch) : "₹0"}</td>
@@ -1493,7 +1493,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                 <div className="flex items-center gap-3">
                   <button
                     onClick={() => window.print()}
-                    className="px-4 py-2 bg-white hover:bg-[#DFBFBA]/20 text-[#660000] border border-[#DFBFBA]/80 rounded-xl text-xs font-semibold flex items-center gap-2 transition cursor-pointer shadow-2xs"
+                    className="px-4 py-2 bg-white hover:bg-[#FECACA]/20 text-[#660000] border border-[#FECACA]/80 rounded-xl text-xs font-semibold flex items-center gap-2 transition cursor-pointer shadow-2xs"
                   >
                     <FileText className="w-4 h-4 text-[#660000]" />
                     <span>Print / Save PDF</span>
@@ -1521,7 +1521,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                   </p>
                 </div>
 
-                <div className="text-right text-xs space-y-1 bg-[#DFBFBA]/20 border border-[#DFBFBA]/60 rounded-xl p-3.5 min-w-[220px]">
+                <div className="text-right text-xs space-y-1 bg-[#FECACA]/20 border border-[#FECACA]/60 rounded-xl p-3.5 min-w-[220px]">
                   <div className="flex justify-between gap-4">
                     <span className="font-semibold text-slate-500 uppercase text-[10px]">Report Period:</span>
                     <span className="font-bold text-[#660000]">{MONTH_NAMES[selectedMonth - 1]} {selectedYear}</span>
@@ -1534,7 +1534,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                         : `April ${selectedYear - 1} – March ${selectedYear}`}
                     </span>
                   </div>
-                  <div className="flex justify-between gap-4 pt-1 border-t border-[#DFBFBA]/40">
+                  <div className="flex justify-between gap-4 pt-1 border-t border-[#FECACA]/40">
                     <span className="font-medium text-slate-400 uppercase text-[9px]">Generated On:</span>
                     <span className="font-mono text-[10px] text-slate-600">{new Date().toLocaleString("en-IN")}</span>
                   </div>
@@ -1570,7 +1570,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                   <div className="bg-white border border-slate-200 rounded-xl p-4 space-y-1 shadow-2xs">
                     <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">MTD ACHIEVEMENT %</span>
                     <div className="text-xl font-bold text-[#660000]">{data?.mtdSummary?.achievementPercentage ?? data?.summary?.overallPremiumAchievement ?? 0}%</div>
-                    <div className="w-full bg-[#DFBFBA]/30 h-1.5 rounded-full overflow-hidden mt-1">
+                    <div className="w-full bg-[#FECACA]/30 h-1.5 rounded-full overflow-hidden mt-1">
                       <div
                         className="bg-[#660000] h-full rounded-full"
                         style={{ width: `${Math.min(100, data?.mtdSummary?.achievementPercentage ?? data?.summary?.overallPremiumAchievement ?? 0)}%` }}
@@ -1586,24 +1586,24 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                   </div>
 
                   {/* YTD ASSIGNED */}
-                  <div className="bg-[#DFBFBA]/15 border border-[#DFBFBA]/60 rounded-xl p-4 space-y-1 shadow-2xs">
+                  <div className="bg-[#FECACA]/15 border border-[#FECACA]/60 rounded-xl p-4 space-y-1 shadow-2xs">
                     <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">YTD ASSIGNED TARGET</span>
                     <div className="text-xl font-bold text-slate-900">{fmtCurr(data?.ytdSummary?.assignedTarget ?? data?.mtdSummary?.assignedTarget ?? 0)}</div>
                     <span className="text-[10px] text-slate-500 font-normal">April to Selected Month Target</span>
                   </div>
 
                   {/* YTD ACHIEVEMENT */}
-                  <div className="bg-[#DFBFBA]/15 border border-[#DFBFBA]/60 rounded-xl p-4 space-y-1 shadow-2xs">
+                  <div className="bg-[#FECACA]/15 border border-[#FECACA]/60 rounded-xl p-4 space-y-1 shadow-2xs">
                     <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">YTD ACHIEVED PREMIUM</span>
                     <div className="text-xl font-bold text-[#660000]">{fmtCurr(data?.ytdSummary?.achievement ?? data?.mtdSummary?.achievement ?? 0)}</div>
                     <span className="text-[10px] text-slate-500 font-normal">April Start Cumulative Ledger</span>
                   </div>
 
                   {/* YTD % */}
-                  <div className="bg-[#DFBFBA]/15 border border-[#DFBFBA]/60 rounded-xl p-4 space-y-1 shadow-2xs">
+                  <div className="bg-[#FECACA]/15 border border-[#FECACA]/60 rounded-xl p-4 space-y-1 shadow-2xs">
                     <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">YTD ACHIEVEMENT %</span>
                     <div className="text-xl font-bold text-[#660000]">{data?.ytdSummary?.achievementPercentage ?? data?.mtdSummary?.achievementPercentage ?? 0}%</div>
-                    <div className="w-full bg-[#DFBFBA]/40 h-1.5 rounded-full overflow-hidden mt-1">
+                    <div className="w-full bg-[#FECACA]/40 h-1.5 rounded-full overflow-hidden mt-1">
                       <div
                         className="bg-[#660000] h-full rounded-full"
                         style={{ width: `${Math.min(100, data?.ytdSummary?.achievementPercentage ?? data?.mtdSummary?.achievementPercentage ?? 0)}%` }}
@@ -1612,7 +1612,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                   </div>
 
                   {/* YTD REMAINING */}
-                  <div className="bg-[#DFBFBA]/15 border border-[#DFBFBA]/60 rounded-xl p-4 space-y-1 shadow-2xs">
+                  <div className="bg-[#FECACA]/15 border border-[#FECACA]/60 rounded-xl p-4 space-y-1 shadow-2xs">
                     <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">YTD REMAINING TARGET</span>
                     <div className="text-xl font-bold text-slate-800">{fmtCurr(data?.ytdSummary?.remainingTarget ?? data?.mtdSummary?.remainingTarget ?? 0)}</div>
                     <span className="text-[10px] text-slate-500 font-normal">Cumulative Target Gap</span>
@@ -1652,7 +1652,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                         const mtdRem = emp.mtd?.remainingTarget ?? emp.remainingPremium ?? 0;
 
                         return (
-                          <tr key={emp.employeeId} className={idx % 2 === 1 ? "bg-[#DFBFBA]/10" : "bg-white"}>
+                          <tr key={emp.employeeId} className={idx % 2 === 1 ? "bg-[#FECACA]/10" : "bg-white"}>
                             <td className="px-3 py-2 text-center font-mono font-medium text-slate-400 border-r border-slate-200">
                               {emp.sNo < 10 ? `0${emp.sNo}` : emp.sNo}
                             </td>
@@ -1665,7 +1665,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                             
                             <td className="px-3 py-2 text-center border-r border-slate-200 font-semibold">
                               <span className="text-[#660000] font-semibold">{mtdPct}%</span>
-                              <div className="w-16 bg-[#DFBFBA]/30 h-1 rounded-full overflow-hidden mx-auto mt-0.5">
+                              <div className="w-16 bg-[#FECACA]/30 h-1 rounded-full overflow-hidden mx-auto mt-0.5">
                                 <div className="bg-[#660000] h-full rounded-full" style={{ width: `${Math.min(100, mtdPct)}%` }} />
                               </div>
                             </td>
@@ -1674,7 +1674,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                             
                             <td className="px-3 py-2 text-center">
                               <span className={`px-2 py-0.5 rounded text-[10px] font-semibold ${
-                                emp.status === "Excellent" || emp.status === "On Track" ? "bg-[#DFBFBA]/30 text-[#660000] border border-[#DFBFBA]/80" :
+                                emp.status === "Excellent" || emp.status === "On Track" ? "bg-[#FECACA]/30 text-[#660000] border border-[#FECACA]/80" :
                                 emp.status === "Needs Attention" ? "bg-amber-50 text-amber-800 border border-amber-200" :
                                 emp.status === "Target Not Assigned" ? "bg-slate-100 text-slate-600 border border-slate-200" : "bg-red-50 text-red-800 border border-red-200"
                               }`}>
@@ -1708,7 +1708,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                       <div key={team.teamName} className="border border-slate-200 rounded-xl p-4 bg-white space-y-3 shadow-2xs">
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-slate-100">
                           <div className="flex items-center gap-2">
-                            <span className="px-2 py-0.5 bg-[#DFBFBA]/30 text-[#660000] border border-[#DFBFBA]/80 rounded-md font-semibold text-[10px]">
+                            <span className="px-2 py-0.5 bg-[#FECACA]/30 text-[#660000] border border-[#FECACA]/80 rounded-md font-semibold text-[10px]">
                               TEAM
                             </span>
                             <h4 className="font-semibold text-slate-900 text-sm">{team.teamName.toUpperCase()}</h4>
@@ -1724,7 +1724,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
 
                         <div className="overflow-x-auto text-xs">
                           <table className="w-full text-left border-collapse">
-                            <thead className="bg-[#DFBFBA]/20 text-[#660000] font-semibold border-b border-[#DFBFBA]/50">
+                            <thead className="bg-[#FECACA]/20 text-[#660000] font-semibold border-b border-[#FECACA]/50">
                               <tr>
                                 <th className="px-3 py-2">MEMBER</th>
                                 <th className="px-3 py-2">ROLE</th>
@@ -1740,7 +1740,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                                 const mMtdPct = m.mtd?.achievementPercentage ?? m.premiumAchievement ?? 0;
 
                                 return (
-                                  <tr key={m.employeeId} className="hover:bg-[#DFBFBA]/10">
+                                  <tr key={m.employeeId} className="hover:bg-[#FECACA]/10">
                                     <td className="px-3 py-1.5 font-semibold text-slate-900">{m.employeeName}</td>
                                     <td className="px-3 py-1.5 text-slate-600 font-normal">{m.role}</td>
                                     <td className="px-3 py-1.5 text-right font-mono text-slate-700">{mMtdTgt > 0 ? fmtCurr(mMtdTgt) : "Target not assigned"}</td>
@@ -1768,7 +1768,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                   </h4>
                   <div className="border border-slate-200 rounded-xl overflow-hidden text-xs">
                     <table className="w-full text-left">
-                      <thead className="bg-[#DFBFBA]/20 text-[#660000] font-semibold border-b border-[#DFBFBA]/60">
+                      <thead className="bg-[#FECACA]/20 text-[#660000] font-semibold border-b border-[#FECACA]/60">
                         <tr>
                           <th className="px-3 py-2">INSURANCE COMPANY</th>
                           <th className="px-3 py-2 text-center">POLICIES</th>
@@ -1777,7 +1777,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                       </thead>
                       <tbody className="divide-y divide-slate-100 font-medium text-slate-800">
                         {validCompanyProductionList.map((cp) => (
-                          <tr key={cp.companyName} className="hover:bg-[#DFBFBA]/10">
+                          <tr key={cp.companyName} className="hover:bg-[#FECACA]/10">
                             <td className="px-3 py-2 font-semibold text-slate-900">{cp.companyName}</td>
                             <td className="px-3 py-2 text-center font-medium text-slate-900">{cp.actualPolicies}</td>
                             <td className="px-3 py-2 text-right font-semibold text-[#660000] font-mono">{fmtCurr(cp.actualPremium)}</td>
@@ -1803,7 +1803,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                   </h4>
                   <div className="border border-slate-200 rounded-xl overflow-hidden text-xs">
                     <table className="w-full text-left">
-                      <thead className="bg-[#DFBFBA]/20 text-[#660000] font-semibold border-b border-[#DFBFBA]/60">
+                      <thead className="bg-[#FECACA]/20 text-[#660000] font-semibold border-b border-[#FECACA]/60">
                         <tr>
                           <th className="px-3 py-2 text-center">RANK</th>
                           <th className="px-3 py-2">EMPLOYEE</th>
@@ -1816,7 +1816,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                           .filter(e => (e.mtd?.achievement ?? e.actualPremium ?? 0) > 0)
                           .slice(0, 5)
                           .map((emp, idx) => (
-                            <tr key={emp.employeeId} className="hover:bg-[#DFBFBA]/10">
+                            <tr key={emp.employeeId} className="hover:bg-[#FECACA]/10">
                               <td className="px-3 py-2 text-center font-semibold text-[#660000]">#{idx + 1}</td>
                               <td className="px-3 py-2 font-semibold text-slate-900">{emp.employeeName}</td>
                               <td className="px-3 py-2 text-right font-mono text-[#660000] font-semibold">{fmtCurr(emp.mtd?.achievement ?? emp.actualPremium ?? 0)}</td>
@@ -1845,7 +1845,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                   </h3>
                 </div>
 
-                <div className="bg-[#DFBFBA]/15 border border-[#DFBFBA]/60 rounded-xl p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 text-center">
+                <div className="bg-[#FECACA]/15 border border-[#FECACA]/60 rounded-xl p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 text-center">
                   <div>
                     <span className="text-[10px] font-semibold text-slate-400 block uppercase">TOTAL EMPLOYEES</span>
                     <span className="text-base font-bold text-slate-900">{data.summary.employeeCount}</span>
@@ -1929,7 +1929,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                 </div>
               )}
 
-              <div className="p-2.5 bg-[#DFBFBA]/20 border border-[#DFBFBA]/70 text-[#660000] rounded-xl text-[11px] font-medium flex items-center gap-2">
+              <div className="p-2.5 bg-[#FECACA]/20 border border-[#FECACA]/70 text-[#660000] rounded-xl text-[11px] font-medium flex items-center gap-2">
                 <AlertCircle className="w-4 h-4 shrink-0 text-[#660000]" />
                 <span>Targets are manually assigned at TSE level only. TL, TM, and BM targets automatically roll up from underlying TSE targets.</span>
               </div>
@@ -1967,7 +1967,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                     }}
                     className="w-full bg-white border border-slate-300 hover:border-[#660000] focus-within:border-[#660000] focus-within:ring-2 focus-within:ring-[#660000]/10 rounded-xl px-3 py-2 flex items-center gap-2.5 cursor-pointer transition shadow-2xs group"
                   >
-                    <div className="w-7 h-7 rounded-lg bg-[#DFBFBA]/30 text-[#660000] flex items-center justify-center shrink-0">
+                    <div className="w-7 h-7 rounded-lg bg-[#FECACA]/30 text-[#660000] flex items-center justify-center shrink-0">
                       <Calendar className="w-4 h-4 text-[#660000]" />
                     </div>
                     <input
@@ -2023,7 +2023,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                   <button
                     type="button"
                     onClick={() => setIsAssignModalOpen(false)}
-                    className="px-4 py-2 bg-white hover:bg-[#DFBFBA]/20 text-[#660000] border border-[#DFBFBA]/80 rounded-xl font-semibold cursor-pointer transition"
+                    className="px-4 py-2 bg-white hover:bg-[#FECACA]/20 text-[#660000] border border-[#FECACA]/80 rounded-xl font-semibold cursor-pointer transition"
                   >
                     Cancel
                   </button>
@@ -2098,8 +2098,8 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                   <div className="space-y-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {/* MTD CARD */}
-                      <div className="bg-[#DFBFBA]/15 border border-[#DFBFBA]/60 rounded-xl p-4 space-y-3">
-                        <div className="flex items-center justify-between border-b border-[#DFBFBA]/40 pb-2">
+                      <div className="bg-[#FECACA]/15 border border-[#FECACA]/60 rounded-xl p-4 space-y-3">
+                        <div className="flex items-center justify-between border-b border-[#FECACA]/40 pb-2">
                           <span className="font-semibold text-[#660000] text-xs uppercase tracking-wider">
                             MTD — {MONTH_NAMES[selectedMonth - 1].toUpperCase()} {selectedYear}
                           </span>
@@ -2140,8 +2140,8 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                       </div>
 
                       {/* YTD CARD */}
-                      <div className="bg-[#DFBFBA]/25 border border-[#DFBFBA]/80 rounded-xl p-4 space-y-3">
-                        <div className="flex items-center justify-between border-b border-[#DFBFBA]/60 pb-2">
+                      <div className="bg-[#FECACA]/25 border border-[#FECACA]/80 rounded-xl p-4 space-y-3">
+                        <div className="flex items-center justify-between border-b border-[#FECACA]/60 pb-2">
                           <span className="font-semibold text-[#660000] text-xs uppercase tracking-wider">
                             YTD — APRIL TO {MONTH_NAMES[selectedMonth - 1].toUpperCase()} {selectedYear}
                           </span>
@@ -2218,7 +2218,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
 
                 <div className="border border-slate-200 rounded-xl overflow-hidden text-xs">
                   <table className="w-full text-left">
-                    <thead className="bg-[#DFBFBA]/20 text-[#660000] font-semibold border-b border-[#DFBFBA]/60">
+                    <thead className="bg-[#FECACA]/20 text-[#660000] font-semibold border-b border-[#FECACA]/60">
                       <tr>
                         <th className="px-3 py-2">MONTH</th>
                         <th className="px-3 py-2 text-right">ASSIGNED TARGET</th>
@@ -2229,7 +2229,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                     </thead>
                     <tbody className="divide-y divide-slate-100 font-medium text-slate-800">
                       {selectedEmpDetail.monthlyBreakdown?.map((mb) => (
-                        <tr key={`${mb.year}-${mb.month}`} className="hover:bg-[#DFBFBA]/10">
+                        <tr key={`${mb.year}-${mb.month}`} className="hover:bg-[#FECACA]/10">
                           <td className="px-3 py-2 font-semibold text-slate-900">{mb.monthName} {mb.year}</td>
                           <td className="px-3 py-2 text-right font-mono">{mb.assignedTarget > 0 ? fmtCurr(mb.assignedTarget) : "Target not assigned"}</td>
                           <td className="px-3 py-2 text-right font-semibold text-[#660000] font-mono">{mb.achievement > 0 ? fmtCurr(mb.achievement) : "₹0"}</td>
@@ -2238,7 +2238,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                         </tr>
                       ))}
 
-                      <tr className="bg-[#DFBFBA]/30 font-semibold text-slate-900 border-t border-[#DFBFBA]">
+                      <tr className="bg-[#FECACA]/30 font-semibold text-slate-900 border-t border-[#FECACA]">
                         <td className="px-3 py-2 text-[#660000] font-semibold">TOTAL YTD</td>
                         <td className="px-3 py-2 text-right font-mono">
                           {(selectedEmpDetail.ytd?.assignedTarget ?? 0) > 0 ? fmtCurr(selectedEmpDetail.ytd?.assignedTarget ?? 0) : "Target not assigned"}
@@ -2268,7 +2268,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                   </h4>
                   <div className="border border-slate-200 rounded-xl overflow-hidden text-xs">
                     <table className="w-full text-left">
-                      <thead className="bg-[#DFBFBA]/20 text-[#660000] font-semibold border-b border-[#DFBFBA]/60">
+                      <thead className="bg-[#FECACA]/20 text-[#660000] font-semibold border-b border-[#FECACA]/60">
                         <tr>
                           <th className="px-3 py-2">INSURANCE COMPANY</th>
                           <th className="px-3 py-2 text-center">POLICIES</th>
@@ -2277,7 +2277,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                       </thead>
                       <tbody className="divide-y divide-slate-100 font-medium text-slate-800">
                         {selectedEmpDetail.companyBreakdown.map((cb) => (
-                          <tr key={cb.companyName} className="hover:bg-[#DFBFBA]/10">
+                          <tr key={cb.companyName} className="hover:bg-[#FECACA]/10">
                             <td className="px-3 py-2 font-semibold text-slate-900">{cb.companyName}</td>
                             <td className="px-3 py-2 text-center font-medium text-slate-900">{cb.actualPolicies}</td>
                             <td className="px-3 py-2 text-right font-semibold text-[#660000] font-mono">{fmtCurr(cb.actualPremium)}</td>
@@ -2303,7 +2303,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                   </h4>
                   <div className="border border-slate-200 rounded-xl overflow-hidden text-xs">
                     <table className="w-full text-left">
-                      <thead className="bg-[#DFBFBA]/20 text-[#660000] font-semibold border-b border-[#DFBFBA]/60">
+                      <thead className="bg-[#FECACA]/20 text-[#660000] font-semibold border-b border-[#FECACA]/60">
                         <tr>
                           <th className="px-3 py-2">PRODUCT NAME</th>
                           <th className="px-3 py-2 text-center">POLICIES</th>
@@ -2312,7 +2312,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                       </thead>
                       <tbody className="divide-y divide-slate-100 font-medium text-slate-800">
                         {selectedEmpDetail.productBreakdown?.map((pb) => (
-                          <tr key={pb.productName} className="hover:bg-[#DFBFBA]/10">
+                          <tr key={pb.productName} className="hover:bg-[#FECACA]/10">
                             <td className="px-3 py-2 font-semibold text-slate-900">{pb.productName}</td>
                             <td className="px-3 py-2 text-center font-medium text-slate-900">{pb.policies}</td>
                             <td className="px-3 py-2 text-right font-semibold text-[#660000] font-mono">{fmtCurr(pb.premium)}</td>
@@ -2341,7 +2341,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
 
                 <div className="border border-slate-200 rounded-xl overflow-x-auto text-xs whitespace-nowrap">
                   <table className="w-full text-left">
-                    <thead className="bg-[#DFBFBA]/20 text-[#660000] font-semibold border-b border-[#DFBFBA]/60">
+                    <thead className="bg-[#FECACA]/20 text-[#660000] font-semibold border-b border-[#FECACA]/60">
                       <tr>
                         <th className="px-3 py-2">CUSTOMER NAME</th>
                         <th className="px-3 py-2">POLICY NUMBER</th>
@@ -2356,7 +2356,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                     </thead>
                     <tbody className="divide-y divide-slate-100 font-medium text-slate-800">
                       {selectedEmpDetail.policyDetails?.map((pol) => (
-                        <tr key={pol.id} className="hover:bg-[#DFBFBA]/10">
+                        <tr key={pol.id} className="hover:bg-[#FECACA]/10">
                           <td className="px-3 py-2 font-semibold text-slate-900">{pol.customerName}</td>
                           <td className="px-3 py-2 font-mono text-slate-600 font-normal">{pol.policyNumber}</td>
                           <td className="px-3 py-2 font-medium text-slate-800">{pol.companyName}</td>
@@ -2364,7 +2364,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
                           <td className="px-3 py-2 text-slate-600 font-normal">{pol.businessType}</td>
                           <td className="px-3 py-2 text-right font-semibold text-[#660000] font-mono">{fmtCurr(pol.premiumAmount)}</td>
                           <td className="px-3 py-2 text-center">
-                            <span className="px-2.5 py-0.5 bg-[#DFBFBA]/30 text-[#660000] border border-[#DFBFBA]/80 rounded-md text-[10px] font-semibold">
+                            <span className="px-2.5 py-0.5 bg-[#FECACA]/30 text-[#660000] border border-[#FECACA]/80 rounded-md text-[10px] font-semibold">
                               {pol.policyStatus}
                             </span>
                           </td>
@@ -2388,7 +2388,7 @@ export default function PerformanceManagement({ user }: PerformanceManagementPro
               <div className="flex justify-end pt-2 border-t border-slate-100">
                 <button
                   onClick={() => setSelectedEmpDetail(null)}
-                  className="px-4 py-2 bg-white hover:bg-[#DFBFBA]/20 text-[#660000] border border-[#DFBFBA]/80 font-semibold text-xs rounded-xl cursor-pointer transition"
+                  className="px-4 py-2 bg-white hover:bg-[#FECACA]/20 text-[#660000] border border-[#FECACA]/80 font-semibold text-xs rounded-xl cursor-pointer transition"
                 >
                   Close Detail View
                 </button>

@@ -298,7 +298,7 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-100 pb-5">
         <div>
           <h2 className="text-base font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
-            <Cake className="w-5 h-5 text-pink-600 animate-pulse" />
+            <Cake className="w-5 h-5 text-red-600 animate-pulse" />
             Customer Birthday Calendar
           </h2>
           <p className="text-slate-500 text-xs font-normal">Track upcoming customer birthdays and send timely wishes.</p>
@@ -310,7 +310,7 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
             type="button"
             onClick={() => setPeriodMode("today")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-              periodMode === "today" ? "bg-white text-pink-700 shadow-2xs font-bold" : "text-slate-500 hover:text-slate-900"
+              periodMode === "today" ? "bg-white text-red-700 shadow-2xs font-bold" : "text-slate-500 hover:text-slate-900"
             }`}
           >
             Today
@@ -319,7 +319,7 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
             type="button"
             onClick={() => setPeriodMode("next7")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-              periodMode === "next7" ? "bg-white text-pink-700 shadow-2xs font-bold" : "text-slate-500 hover:text-slate-900"
+              periodMode === "next7" ? "bg-white text-red-700 shadow-2xs font-bold" : "text-slate-500 hover:text-slate-900"
             }`}
           >
             Next 7 Days
@@ -328,7 +328,7 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
             type="button"
             onClick={() => setPeriodMode("thisMonth")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-              periodMode === "thisMonth" ? "bg-white text-pink-700 shadow-2xs font-bold" : "text-slate-500 hover:text-slate-900"
+              periodMode === "thisMonth" ? "bg-white text-red-700 shadow-2xs font-bold" : "text-slate-500 hover:text-slate-900"
             }`}
           >
             This Month
@@ -337,7 +337,7 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
             type="button"
             onClick={() => setPeriodMode("byMonth")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-              periodMode === "byMonth" ? "bg-white text-pink-700 shadow-2xs font-bold" : "text-slate-500 hover:text-slate-900"
+              periodMode === "byMonth" ? "bg-white text-red-700 shadow-2xs font-bold" : "text-slate-500 hover:text-slate-900"
             }`}
           >
             By Month
@@ -346,7 +346,7 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
             type="button"
             onClick={() => setPeriodMode("dateRange")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-              periodMode === "dateRange" ? "bg-white text-pink-700 shadow-2xs font-bold" : "text-slate-500 hover:text-slate-900"
+              periodMode === "dateRange" ? "bg-white text-red-700 shadow-2xs font-bold" : "text-slate-500 hover:text-slate-900"
             }`}
           >
             Date Range
@@ -364,7 +364,7 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
             placeholder="Search by customer name, mobile or policy number..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-slate-50 border border-slate-200 focus:border-pink-500 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-850 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-pink-500/20 transition font-medium"
+            className="w-full bg-slate-50 border border-slate-200 focus:border-red-500 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-850 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-red-500/20 transition font-medium"
           />
         </div>
 
@@ -377,10 +377,10 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
                 <button
                   type="button"
                   onClick={() => setIsMonthPickerOpen(prev => !prev)}
-                  className="bg-white border border-slate-200 hover:border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-800 font-semibold focus:outline-none focus:ring-1 focus:ring-pink-500 flex items-center gap-2 cursor-pointer shadow-2xs transition"
+                  className="bg-white border border-slate-200 hover:border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-800 font-semibold focus:outline-none focus:ring-1 focus:ring-red-500 flex items-center gap-2 cursor-pointer shadow-2xs transition"
                 >
                   <span>{MONTH_NAMES[selectedMonth - 1]}</span>
-                  <Calendar className="w-3.5 h-3.5 text-pink-500 shrink-0" />
+                  <Calendar className="w-3.5 h-3.5 text-red-500 shrink-0" />
                 </button>
               </div>
 
@@ -405,15 +405,15 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
                           }}
                           className={`py-2 px-1 text-xs rounded-xl font-bold transition cursor-pointer relative ${
                             isSelected
-                              ? "bg-pink-600 text-white shadow-xs"
+                              ? "bg-red-600 text-white shadow-xs"
                               : isCurrent
-                              ? "bg-pink-50 text-pink-800 border border-pink-200 font-extrabold"
+                              ? "bg-red-50 text-red-800 border border-red-200 font-extrabold"
                               : "text-slate-700 hover:bg-slate-100"
                           }`}
                         >
                           {m}
                           {isCurrent && !isSelected && (
-                            <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-pink-600" />
+                            <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-red-600" />
                           )}
                         </button>
                       );
@@ -429,27 +429,27 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
               <div className="flex flex-wrap items-center gap-3">
                 <div className="flex items-center gap-1.5">
                   <label className="text-xs font-semibold text-slate-600 uppercase tracking-wide">
-                    From <span className="text-pink-500">*</span>
+                    From <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="date"
                     required
                     value={fromDate}
                     onChange={(e) => setFromDate(e.target.value)}
-                    className="bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-xs text-slate-800 font-semibold focus:outline-none focus:ring-1 focus:ring-pink-500 font-mono"
+                    className="bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-xs text-slate-800 font-semibold focus:outline-none focus:ring-1 focus:ring-red-500 font-mono"
                   />
                 </div>
 
                 <div className="flex items-center gap-1.5">
                   <label className="text-xs font-semibold text-slate-600 uppercase tracking-wide">
-                    To <span className="text-pink-500">*</span>
+                    To <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="date"
                     required
                     value={toDate}
                     onChange={(e) => setToDate(e.target.value)}
-                    className="bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-xs text-slate-800 font-semibold focus:outline-none focus:ring-1 focus:ring-pink-500 font-mono"
+                    className="bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-xs text-slate-800 font-semibold focus:outline-none focus:ring-1 focus:ring-red-500 font-mono"
                   />
                 </div>
               </div>
@@ -529,7 +529,7 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
                         </td>
                         <td className="py-3.5 px-4">
                           {turningAge !== null ? (
-                            <span className="font-bold text-pink-700 bg-pink-50 border border-pink-100 px-2 py-0.5 rounded-md text-[11px]">
+                            <span className="font-bold text-red-700 bg-red-50 border border-red-100 px-2 py-0.5 rounded-md text-[11px]">
                               {turningAge} Yrs
                             </span>
                           ) : (
@@ -552,9 +552,9 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
                         <td className="py-3.5 px-4 text-center">
                           <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-extrabold shadow-2xs ${
                             status.isToday 
-                              ? "bg-pink-600 text-white animate-pulse" 
+                              ? "bg-red-600 text-white animate-pulse" 
                               : status.isSoon 
-                              ? "bg-pink-100 text-pink-800 border border-pink-200" 
+                              ? "bg-red-100 text-red-800 border border-red-200" 
                               : "bg-slate-100 text-slate-700"
                           }`}>
                             {status.label}
@@ -565,7 +565,7 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
                             type="button"
                             onClick={() => sendBirthdayWish(policy)}
                             disabled={sendingId !== null}
-                            className="px-2.5 py-1.5 bg-gradient-to-r from-pink-600 via-rose-600 to-pink-600 bg-[length:200%_auto] hover:bg-right text-white rounded-lg text-[11px] font-bold flex items-center gap-1 cursor-pointer transition-all duration-500 shadow-sm shadow-pink-500/30 hover:shadow-md hover:shadow-pink-500/40 hover:-translate-y-0.5 ml-auto disabled:opacity-40 disabled:translate-y-0 disabled:shadow-none whitespace-nowrap border border-pink-500/20"
+                            className="px-2.5 py-1.5 bg-gradient-to-r from-red-600 via-rose-600 to-red-600 bg-[length:200%_auto] hover:bg-right text-white rounded-lg text-[11px] font-bold flex items-center gap-1 cursor-pointer transition-all duration-500 shadow-sm shadow-red-500/30 hover:shadow-md hover:shadow-red-500/40 hover:-translate-y-0.5 ml-auto disabled:opacity-40 disabled:translate-y-0 disabled:shadow-none whitespace-nowrap border border-red-500/20"
                           >
                             {sendingId === policy.id ? (
                               <Loader2 className="w-3 h-3 animate-spin" />
@@ -592,7 +592,7 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
               return (
                 <div
                   key={policy.id}
-                  className="bg-white border border-slate-200 hover:border-pink-300 rounded-2xl p-4 space-y-3 shadow-2xs transition-all"
+                  className="bg-white border border-slate-200 hover:border-red-300 rounded-2xl p-4 space-y-3 shadow-2xs transition-all"
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div>
@@ -600,7 +600,7 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
                       <p className="text-[11px] text-slate-500 mt-0.5">{policy.customerEmail}</p>
                     </div>
                     <span className={`px-2.5 py-1 rounded-full text-[10px] font-extrabold ${
-                      status.isToday ? "bg-pink-600 text-white" : "bg-pink-50 text-pink-700 border border-pink-100"
+                      status.isToday ? "bg-red-600 text-white" : "bg-red-50 text-red-700 border border-red-100"
                     }`}>
                       {status.label}
                     </span>
@@ -613,7 +613,7 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
                     </div>
                     <div>
                       <span className="text-[10px] text-slate-400 uppercase font-bold block">Turning Age</span>
-                      <span className="font-bold text-pink-700">{turningAge !== null ? `${turningAge} Yrs` : "N/A"}</span>
+                      <span className="font-bold text-red-700">{turningAge !== null ? `${turningAge} Yrs` : "N/A"}</span>
                     </div>
                     <div>manish yafab mnis
                       <span className="text-[10px] text-slate-400 uppercase font-bold block">Mobile</span>
@@ -630,7 +630,7 @@ export default function BirthdayDashboard({ policies, whatsAppSettings, onAddEma
                       type="button"
                       onClick={() => sendBirthdayWish(policy)}
                       disabled={sendingId !== null}
-                      className="w-full py-2 bg-gradient-to-r from-pink-600 via-rose-600 to-pink-600 bg-[length:200%_auto] hover:bg-right text-white rounded-lg text-[11px] font-bold flex items-center justify-center gap-1 cursor-pointer transition-all duration-500 shadow-sm shadow-pink-500/30 disabled:opacity-40 border border-pink-500/20"
+                      className="w-full py-2 bg-gradient-to-r from-red-600 via-rose-600 to-red-600 bg-[length:200%_auto] hover:bg-right text-white rounded-lg text-[11px] font-bold flex items-center justify-center gap-1 cursor-pointer transition-all duration-500 shadow-sm shadow-red-500/30 disabled:opacity-40 border border-red-500/20"
                     >
                       {sendingId === policy.id ? (
                         <Loader2 className="w-3 h-3 animate-spin" />

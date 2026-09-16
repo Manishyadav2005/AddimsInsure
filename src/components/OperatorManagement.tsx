@@ -388,7 +388,7 @@ export default function OperatorManagement({ user }: OperatorManagementProps) {
       <div className="bg-white border border-slate-200/90 rounded-2xl p-5 sm:p-6 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-3">
-            <div className="p-2.5 bg-[#DFBFBA]/20 border border-[#DFBFBA]/60 text-[#660000] rounded-xl shrink-0">
+            <div className="p-2.5 bg-red-100 border border-red-200 text-[#660000] rounded-xl shrink-0">
               <UserCheck className="w-5 h-5" />
             </div>
             <div>
@@ -449,7 +449,7 @@ export default function OperatorManagement({ user }: OperatorManagementProps) {
                 {filteredOperators.map((op) => (
                   <tr key={op._id || op.id} className="hover:bg-slate-50/70 transition">
                     <td className="px-4 py-3 font-bold text-slate-900 flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-full bg-[#DFBFBA]/20 text-[#660000] font-bold text-xs flex items-center justify-center border border-[#DFBFBA]">
+                      <div className="w-7 h-7 rounded-full bg-red-100 text-[#660000] font-bold text-xs flex items-center justify-center border border-red-200">
                         {op.name ? op.name.charAt(0).toUpperCase() : "U"}
                       </div>
                       <span>{op.name}</span>
@@ -467,7 +467,7 @@ export default function OperatorManagement({ user }: OperatorManagementProps) {
                             </span>
                           ))}
                           {op.permissions.length > 4 && (
-                            <span className="px-2 py-0.5 bg-[#DFBFBA]/20 border border-[#DFBFBA]/60 text-[#660000] text-[10px] font-bold rounded-md">
+                            <span className="px-2 py-0.5 bg-red-100 border border-red-200 text-[#660000] text-[10px] font-bold rounded-md">
                               +{op.permissions.length - 4} more
                             </span>
                           )}
@@ -627,7 +627,7 @@ export default function OperatorManagement({ user }: OperatorManagementProps) {
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <span className="px-3 py-1 bg-[#DFBFBA]/30 text-[#660000] border border-[#DFBFBA] text-xs font-bold rounded-lg font-mono">
+                      <span className="px-3 py-1 bg-red-100 text-[#660000] border border-red-300 text-xs font-bold rounded-lg font-mono">
                         {formData.permissions.length} Selected
                       </span>
                       <button
@@ -692,8 +692,8 @@ export default function OperatorManagement({ user }: OperatorManagementProps) {
                                   onClick={() => togglePermission(perm.key)}
                                   className={`flex items-start gap-2.5 p-2.5 rounded-xl border cursor-pointer transition select-none ${
                                     isChecked
-                                      ? "bg-[#DFBFBA]/20 border-[#DFBFBA] text-slate-900 shadow-2xs"
-                                      : "bg-slate-50/50 border-slate-200 hover:border-slate-300 text-slate-700"
+                                      ? "bg-red-100 border-red-300 text-red-950 font-bold shadow-2xs ring-1 ring-red-200"
+                                      : "bg-slate-50/50 border-slate-200 hover:border-red-200 text-slate-700"
                                   }`}
                                 >
                                   <input

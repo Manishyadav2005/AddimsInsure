@@ -184,7 +184,7 @@ export default function SuperAdminDashboard({ user, onLogOut }: SuperAdminDashbo
       }}
     >
       {/* Ambient background glow highlights */}
-      <div className="absolute w-[700px] h-[700px] bg-gradient-to-tr from-[#DFBFBA]/20 to-[#660000]/15 rounded-full blur-[130px] pointer-events-none -translate-y-32 left-1/2 -translate-x-1/2" />
+      <div className="absolute w-[700px] h-[700px] bg-gradient-to-tr from-red-200/30 to-[#660000]/15 rounded-full blur-[130px] pointer-events-none -translate-y-32 left-1/2 -translate-x-1/2" />
 
       {/* Header Bar */}
       <header className="bg-white/90 backdrop-blur-xl border-b border-slate-200 px-8 py-4 flex items-center justify-between sticky top-0 z-30 shadow-xs">
@@ -197,7 +197,7 @@ export default function SuperAdminDashboard({ user, onLogOut }: SuperAdminDashbo
               <h1 className="text-xl font-black tracking-tight text-slate-900 font-sans">
                 Addims <span className="text-[#660000]">InSure</span> Owner Portal
               </h1>
-              <span className="text-[10px] font-mono font-extrabold bg-[#DFBFBA] text-[#660000] px-2.5 py-0.5 rounded-full border border-[#DFBFBA] shadow-2xs">
+              <span className="text-[10px] font-mono font-extrabold bg-red-100 text-[#660000] px-2.5 py-0.5 rounded-full border border-red-300 shadow-2xs">
                 SUPER ADMIN
               </span>
             </div>

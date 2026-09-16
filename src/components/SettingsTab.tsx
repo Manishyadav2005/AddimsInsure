@@ -229,7 +229,7 @@ export default function SettingsTab({
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 border-b border-slate-100 pb-5">
         <div>
           <h2 className="text-base font-extrabold font-sans text-slate-900 tracking-tight flex items-center gap-2">
-            <Settings className="w-5 h-5 text-pink-600 animate-spin-slow" />
+            <Settings className="w-5 h-5 text-red-600 animate-spin-slow" />
             Control Hub & Gateway Settings
           </h2>
           <p className="text-slate-500 text-xs">Configure your global company branding, automated email servers, WhatsApp API, and dispatch templates</p>
@@ -239,7 +239,7 @@ export default function SettingsTab({
           <button
             onClick={handleSaveCompanyProfile}
             disabled={savingProfile}
-            className="px-4 py-2 bg-pink-600 hover:bg-pink-500 text-white rounded-xl text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs disabled:opacity-50"
+            className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-xl text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs disabled:opacity-50"
           >
             {savingProfile ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
             {savingProfile ? "Saving Profile..." : "Save Company Profile"}
@@ -247,7 +247,7 @@ export default function SettingsTab({
         ) : (
           <button
             onClick={handleSaveAll}
-            className="px-4 py-2 bg-pink-600 hover:bg-pink-500 text-white rounded-xl text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs"
+            className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-xl text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs"
           >
             <Save className="w-4 h-4" />
             Save Configurations
@@ -268,7 +268,7 @@ export default function SettingsTab({
           onClick={() => setActiveSubTab("company")}
           className={`px-4 py-2 rounded-xl text-xs font-extrabold flex items-center gap-2 transition cursor-pointer ${
             activeSubTab === "company"
-              ? "bg-pink-600 text-white shadow-2xs"
+              ? "bg-red-600 text-white shadow-2xs"
               : "bg-slate-100 text-slate-600 hover:bg-slate-200"
           }`}
         >
@@ -280,7 +280,7 @@ export default function SettingsTab({
           onClick={() => setActiveSubTab("mail")}
           className={`px-4 py-2 rounded-xl text-xs font-extrabold flex items-center gap-2 transition cursor-pointer ${
             activeSubTab === "mail"
-              ? "bg-pink-600 text-white shadow-2xs"
+              ? "bg-red-600 text-white shadow-2xs"
               : "bg-slate-100 text-slate-600 hover:bg-slate-200"
           }`}
         >
@@ -292,7 +292,7 @@ export default function SettingsTab({
           onClick={() => setActiveSubTab("whatsapp")}
           className={`px-4 py-2 rounded-xl text-xs font-extrabold flex items-center gap-2 transition cursor-pointer ${
             activeSubTab === "whatsapp"
-              ? "bg-pink-600 text-white shadow-2xs"
+              ? "bg-red-600 text-white shadow-2xs"
               : "bg-slate-100 text-slate-600 hover:bg-slate-200"
           }`}
         >
@@ -304,7 +304,7 @@ export default function SettingsTab({
           onClick={() => setActiveSubTab("templates")}
           className={`px-4 py-2 rounded-xl text-xs font-extrabold flex items-center gap-2 transition cursor-pointer ${
             activeSubTab === "templates"
-              ? "bg-pink-600 text-white shadow-2xs"
+              ? "bg-red-600 text-white shadow-2xs"
               : "bg-slate-100 text-slate-600 hover:bg-slate-200"
           }`}
         >
@@ -320,7 +320,7 @@ export default function SettingsTab({
           {/* Basic Information */}
           <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-5 space-y-4">
             <h3 className="text-xs font-extrabold text-slate-900 uppercase tracking-wider flex items-center gap-2">
-              <Building2 className="w-4 h-4 text-pink-600" />
+              <Building2 className="w-4 h-4 text-red-600" />
               Basic Information
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -333,7 +333,7 @@ export default function SettingsTab({
                   onChange={handleProfileChange}
                   required
                   placeholder="e.g. Agency Bazaar Insurance"
-                  className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs font-bold text-slate-900 focus:outline-hidden focus:border-pink-600"
+                  className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs font-bold text-slate-900 focus:outline-hidden focus:border-red-600"
                 />
               </div>
 
@@ -345,7 +345,7 @@ export default function SettingsTab({
                   value={companyProfile.gstNumber || ""}
                   onChange={handleProfileChange}
                   placeholder="e.g. 09ABCDE1234F1ZH"
-                  className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs font-mono text-slate-900 focus:outline-hidden focus:border-pink-600 uppercase"
+                  className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs font-mono text-slate-900 focus:outline-hidden focus:border-red-600 uppercase"
                 />
               </div>
             </div>
@@ -354,7 +354,7 @@ export default function SettingsTab({
           {/* Contact Information */}
           <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-5 space-y-4">
             <h3 className="text-xs font-extrabold text-slate-900 uppercase tracking-wider flex items-center gap-2">
-              <Phone className="w-4 h-4 text-pink-600" />
+              <Phone className="w-4 h-4 text-red-600" />
               Contact Information
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -367,7 +367,7 @@ export default function SettingsTab({
                   onChange={handleProfileChange}
                   required
                   placeholder="e.g. +91 9876543210"
-                  className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs font-mono text-slate-900 focus:outline-hidden focus:border-pink-600"
+                  className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs font-mono text-slate-900 focus:outline-hidden focus:border-red-600"
                 />
               </div>
 
@@ -379,7 +379,7 @@ export default function SettingsTab({
                   value={companyProfile.email || ""}
                   onChange={handleProfileChange}
                   placeholder="e.g. support@agencybazaar.com"
-                  className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-900 focus:outline-hidden focus:border-pink-600"
+                  className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-900 focus:outline-hidden focus:border-red-600"
                 />
               </div>
             </div>
@@ -391,7 +391,7 @@ export default function SettingsTab({
             <button
               type="submit"
               disabled={savingProfile}
-              className="px-6 py-2.5 bg-pink-600 hover:bg-pink-500 text-white rounded-xl text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-md disabled:opacity-50"
+              className="px-6 py-2.5 bg-red-600 hover:bg-red-500 text-white rounded-xl text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-md disabled:opacity-50"
             >
               {savingProfile ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
               {savingProfile ? "Saving Profile..." : "Save Company Profile"}
@@ -452,13 +452,13 @@ export default function SettingsTab({
               />
             </div>
             <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">SMTP Password <span className="text-pink-600 font-bold">*</span></label>
+              <label className="block text-xs font-bold text-slate-700 mb-1">SMTP Password <span className="text-red-600 font-bold">*</span></label>
               <input
                 type="password"
                 value={mailSettings.smtpPassword || ""}
                 onChange={(e) => setMailSettings({ ...mailSettings, smtpPassword: e.target.value })}
                 placeholder="Enter SMTP password or app password (secured)"
-                className="w-full bg-slate-50 border border-slate-200 focus:border-pink-500 focus:ring-1 focus:ring-pink-500/20 rounded-xl px-3 py-2 text-xs focus:outline-none transition"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-red-500 focus:ring-1 focus:ring-red-500/20 rounded-xl px-3 py-2 text-xs focus:outline-none transition"
               />
               <p className="text-[10px] text-slate-400 font-normal mt-1">Password will be encrypted and stored securely on backend only.</p>
             </div>

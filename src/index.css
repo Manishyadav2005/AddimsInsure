@@ -7,51 +7,60 @@
   --color-slate-300: #94a3b8;
 
   --color-brand: #660000;
-  --color-brand-light: #DFBFBA;
+  --color-brand-light: #FEE2E2;
+  --color-brand-accent: #DC2626;
 
-  --color-pink-50: #DFBFBA;
-  --color-pink-100: #DFBFBA;
-  --color-pink-200: #DFBFBA;
-  --color-pink-300: #DFBFBA;
-  --color-pink-400: #660000;
-  --color-pink-500: #660000;
-  --color-pink-600: #660000;
-  --color-pink-700: #660000;
-  --color-pink-800: #660000;
-  --color-pink-900: #660000;
+  /* Richer Red Selection Highlight Scales (Pure Vibrant Red) */
+  --color-pink-50: #FEF2F2;
+  --color-pink-100: #FEE2E2;
+  --color-pink-200: #FECACA;
+  --color-pink-300: #FCA5A5;
+  --color-pink-400: #F87171;
+  --color-pink-500: #EF4444;
+  --color-pink-600: #DC2626;
+  --color-pink-700: #B91C1C;
+  --color-pink-800: #991B1B;
+  --color-pink-900: #7F1D1D;
+  --color-pink-950: #660000;
 
-  --color-rose-50: #DFBFBA;
-  --color-rose-100: #DFBFBA;
-  --color-rose-200: #DFBFBA;
-  --color-rose-300: #DFBFBA;
-  --color-rose-400: #660000;
-  --color-rose-500: #660000;
-  --color-rose-600: #660000;
-  --color-rose-700: #660000;
-  --color-rose-800: #660000;
-  --color-rose-900: #660000;
+  --color-rose-50: #FEF2F2;
+  --color-rose-100: #FEE2E2;
+  --color-rose-200: #FECACA;
+  --color-rose-300: #FCA5A5;
+  --color-rose-400: #F87171;
+  --color-rose-500: #EF4444;
+  --color-rose-600: #DC2626;
+  --color-rose-700: #B91C1C;
+  --color-rose-800: #991B1B;
+  --color-rose-900: #7F1D1D;
+  --color-rose-950: #660000;
 
-  --color-teal-50: #DFBFBA;
-  --color-teal-100: #DFBFBA;
-  --color-teal-200: #DFBFBA;
-  --color-teal-300: #DFBFBA;
-  --color-teal-400: #660000;
-  --color-teal-500: #660000;
-  --color-teal-600: #660000;
-  --color-teal-700: #660000;
-  --color-teal-800: #660000;
+  --color-teal-50: #FEF2F2;
+  --color-teal-100: #FEE2E2;
+  --color-teal-200: #FECACA;
+  --color-teal-300: #FCA5A5;
+  --color-teal-400: #F87171;
+  --color-teal-500: #EF4444;
+  --color-teal-600: #DC2626;
+  --color-teal-700: #B91C1C;
+  --color-teal-800: #991B1B;
   --color-teal-900: #660000;
 
-  --color-indigo-50: #DFBFBA;
-  --color-indigo-100: #DFBFBA;
-  --color-indigo-200: #DFBFBA;
-  --color-indigo-300: #DFBFBA;
-  --color-indigo-400: #660000;
-  --color-indigo-500: #660000;
-  --color-indigo-600: #660000;
-  --color-indigo-700: #660000;
-  --color-indigo-800: #660000;
+  --color-indigo-50: #FEF2F2;
+  --color-indigo-100: #FEE2E2;
+  --color-indigo-200: #FECACA;
+  --color-indigo-300: #FCA5A5;
+  --color-indigo-400: #F87171;
+  --color-indigo-500: #EF4444;
+  --color-indigo-600: #DC2626;
+  --color-indigo-700: #B91C1C;
+  --color-indigo-800: #991B1B;
   --color-indigo-900: #660000;
+}
+
+::selection {
+  background-color: #FECACA;
+  color: #7F1D1D;
 }
 
 @layer utilities {

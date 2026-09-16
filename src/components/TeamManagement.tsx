@@ -567,7 +567,7 @@ export default function TeamManagement({ user }: TeamManagementProps) {
       {/* Top Header Card */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-pink-50 border border-pink-100 flex items-center justify-center text-pink-600 shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 shrink-0">
             <Users className="w-5 h-5" />
           </div>
           <div>
@@ -581,7 +581,7 @@ export default function TeamManagement({ user }: TeamManagementProps) {
         <div className="flex flex-wrap items-center gap-2">
           <button
             onClick={openCreateBm}
-            className="px-3 py-1.5 bg-pink-600 hover:bg-pink-500 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer transition shadow-2xs"
+            className="px-3 py-1.5 bg-red-600 hover:bg-red-500 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer transition shadow-2xs"
           >
             <Building2 className="w-4 h-4" />
             <span>+ Add BM</span>
@@ -642,11 +642,11 @@ export default function TeamManagement({ user }: TeamManagementProps) {
           onClick={() => setActiveTab("BM")}
           className={`px-4 py-2.5 rounded-t-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2 border-b-2 whitespace-nowrap ${
             activeTab === "BM"
-              ? "bg-white text-pink-700 border-pink-600 shadow-2xs"
+              ? "bg-red-50 text-red-800 border-red-600 shadow-2xs"
               : "text-slate-600 hover:text-slate-900 border-transparent hover:bg-slate-50"
           }`}
         >
-          <Building2 className={`w-4 h-4 ${activeTab === "BM" ? "text-pink-600" : "text-slate-400"}`} />
+          <Building2 className={`w-4 h-4 ${activeTab === "BM" ? "text-red-600" : "text-slate-400"}`} />
           <span>Branch Managers ({bms.length})</span>
         </button>
 
@@ -654,11 +654,11 @@ export default function TeamManagement({ user }: TeamManagementProps) {
           onClick={() => setActiveTab("TM")}
           className={`px-4 py-2.5 rounded-t-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2 border-b-2 whitespace-nowrap ${
             activeTab === "TM"
-              ? "bg-white text-pink-700 border-pink-600 shadow-2xs"
+              ? "bg-red-50 text-red-800 border-red-600 shadow-2xs"
               : "text-slate-600 hover:text-slate-900 border-transparent hover:bg-slate-50"
           }`}
         >
-          <UserCog className={`w-4 h-4 ${activeTab === "TM" ? "text-pink-600" : "text-slate-400"}`} />
+          <UserCog className={`w-4 h-4 ${activeTab === "TM" ? "text-red-600" : "text-slate-400"}`} />
           <span>Team Managers ({tms.length})</span>
         </button>
 
@@ -666,11 +666,11 @@ export default function TeamManagement({ user }: TeamManagementProps) {
           onClick={() => setActiveTab("TL")}
           className={`px-4 py-2.5 rounded-t-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2 border-b-2 whitespace-nowrap ${
             activeTab === "TL"
-              ? "bg-white text-pink-700 border-pink-600 shadow-2xs"
+              ? "bg-red-50 text-red-800 border-red-600 shadow-2xs"
               : "text-slate-600 hover:text-slate-900 border-transparent hover:bg-slate-50"
           }`}
         >
-          <Users className={`w-4 h-4 ${activeTab === "TL" ? "text-pink-600" : "text-slate-400"}`} />
+          <Users className={`w-4 h-4 ${activeTab === "TL" ? "text-red-600" : "text-slate-400"}`} />
           <span>Team Leaders ({teamLeaders.length})</span>
         </button>
 
@@ -678,11 +678,11 @@ export default function TeamManagement({ user }: TeamManagementProps) {
           onClick={() => setActiveTab("TSE")}
           className={`px-4 py-2.5 rounded-t-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2 border-b-2 whitespace-nowrap ${
             activeTab === "TSE"
-              ? "bg-white text-pink-700 border-pink-600 shadow-2xs"
+              ? "bg-red-50 text-red-800 border-red-600 shadow-2xs"
               : "text-slate-600 hover:text-slate-900 border-transparent hover:bg-slate-50"
           }`}
         >
-          <PhoneCall className={`w-4 h-4 ${activeTab === "TSE" ? "text-pink-600" : "text-slate-400"}`} />
+          <PhoneCall className={`w-4 h-4 ${activeTab === "TSE" ? "text-red-600" : "text-slate-400"}`} />
           <span>TSEs ({callers.length})</span>
         </button>
 
@@ -801,7 +801,7 @@ export default function TeamManagement({ user }: TeamManagementProps) {
           <>
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <h3 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-2">
-                <UserCog className="w-4.5 h-4.5 text-pink-600" />
+                <UserCog className="w-4.5 h-4.5 text-red-600" />
                 Team Managers Master ({filteredTms.length})
               </h3>
               <span className="text-[10px] font-mono text-slate-400">{filteredTms.length} Records</span>
@@ -814,7 +814,7 @@ export default function TeamManagement({ user }: TeamManagementProps) {
                 <p className="italic">No Team Managers created yet.</p>
                 <button
                   onClick={openCreateTm}
-                  className="px-3.5 py-1.5 bg-pink-50 text-pink-700 border border-pink-200 rounded-xl text-xs font-semibold hover:bg-pink-100 cursor-pointer transition inline-block"
+                  className="px-3.5 py-1.5 bg-red-50 text-red-700 border border-red-200 rounded-xl text-xs font-semibold hover:bg-red-100 cursor-pointer transition inline-block"
                 >
                   + Add Team Manager
                 </button>
@@ -840,7 +840,7 @@ export default function TeamManagement({ user }: TeamManagementProps) {
                           <td className="px-4 py-3.5 border-r border-slate-100 font-semibold text-slate-900">
                             {tm.name}
                           </td>
-                          <td className="px-4 py-3.5 border-r border-slate-100 font-mono text-pink-700 font-semibold">
+                          <td className="px-4 py-3.5 border-r border-slate-100 font-mono text-red-700 font-semibold">
                             {tm.employeeCode || "—"}
                           </td>
                           <td className="px-4 py-3.5 border-r border-slate-100 font-medium text-slate-700">
@@ -1384,7 +1384,7 @@ export default function TeamManagement({ user }: TeamManagementProps) {
             >
               <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100 bg-slate-50 shrink-0">
                 <h3 className="text-sm font-bold text-slate-950 uppercase tracking-tight flex items-center gap-2">
-                  <UserCog className="w-4 h-4 text-pink-600" />
+                  <UserCog className="w-4 h-4 text-red-600" />
                   {editingTm ? "Edit Team Manager" : "Add Team Manager Master"}
                 </h3>
                 <button onClick={() => setModalType(null)} className="p-1 rounded-full hover:bg-slate-200 text-slate-400 hover:text-slate-800 transition cursor-pointer">
@@ -1494,7 +1494,7 @@ export default function TeamManagement({ user }: TeamManagementProps) {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="px-5 py-2 bg-pink-600 hover:bg-pink-700 disabled:opacity-50 text-white rounded-xl text-xs font-semibold cursor-pointer transition shadow-2xs"
+                    className="px-5 py-2 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white rounded-xl text-xs font-semibold cursor-pointer transition shadow-2xs"
                   >
                     {submitting ? "Saving..." : editingTm ? "Update Team Manager" : "Create Team Manager"}
                   </button>

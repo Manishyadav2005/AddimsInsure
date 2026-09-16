@@ -842,7 +842,7 @@ const fmtCurrency = (val: number) => `₹${val.toLocaleString("en-IN")}`;
         {/* TOP COMPANIES PREMIUM CONTRIBUTION (full width) */}
         <div className="bg-white border border-slate-200/90 rounded-2xl p-5 shadow-2xs space-y-3">
           <h3 className="text-xs font-extrabold uppercase text-slate-400 tracking-wider flex items-center gap-2">
-            <Building2 className="w-4 h-4 text-pink-600" />
+            <Building2 className="w-4 h-4 text-red-600" />
             Top Companies Premium Contribution
           </h3>
           <div className="space-y-2.5">
@@ -853,7 +853,7 @@ const fmtCurrency = (val: number) => `₹${val.toLocaleString("en-IN")}`;
                   <span className="font-mono font-bold text-slate-600">{fmtCurrency(c.volume)} ({c.percentage}%)</span>
                 </div>
                 <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                  <div className="bg-pink-500 h-full rounded-full" style={{ width: `${c.percentage}%` }} />
+                  <div className="bg-red-500 h-full rounded-full" style={{ width: `${c.percentage}%` }} />
                 </div>
               </div>
             ))}
@@ -1335,7 +1335,7 @@ const fmtCurrency = (val: number) => `₹${val.toLocaleString("en-IN")}`;
 
           <div className="bg-white border border-slate-200/90 rounded-2xl p-5 shadow-2xs space-y-3">
             <h3 className="text-xs font-extrabold uppercase text-slate-400 tracking-wider flex items-center gap-2">
-              <PieChart className="w-4 h-4 text-pink-600" />
+              <PieChart className="w-4 h-4 text-red-600" />
               Fresh Category Distribution
             </h3>
             <div className="space-y-2.5">
@@ -1346,7 +1346,7 @@ const fmtCurrency = (val: number) => `₹${val.toLocaleString("en-IN")}`;
                     <span className="font-mono font-bold text-slate-600">{c.count} policies ({c.percentage}%)</span>
                   </div>
                   <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                    <div className="bg-pink-500 h-full rounded-full" style={{ width: `${c.percentage}%` }} />
+                    <div className="bg-red-500 h-full rounded-full" style={{ width: `${c.percentage}%` }} />
                   </div>
                 </div>
               ))}

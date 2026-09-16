@@ -40,10 +40,10 @@ export default function BrandLogo({
               <stop offset="100%" stopColor="#931A1A" />
             </linearGradient>
 
-            {/* Inner "A" Monogram Gradient: Crisp White to Champagne Rose */}
+            {/* Inner "A" Monogram Gradient: Crisp White to Light Red */}
             <linearGradient id="addimsMonogramGrad" x1="32" y1="14" x2="32" y2="48" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stopColor="#FFFFFF" />
-              <stop offset="100%" stopColor="#DFBFBA" />
+              <stop offset="100%" stopColor="#FEE2E2" />
             </linearGradient>
 
             {/* Glow / Specular Reflection Gradient */}

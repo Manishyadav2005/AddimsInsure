@@ -2521,7 +2521,7 @@ export default function PolicyList({
 
               <form onSubmit={editingPolicy ? handleEditPolicy : handleAddPolicy} className="p-6 space-y-5 bg-white overflow-y-auto custom-scrollbar flex-1">
                 {/* BUSINESS LOGIN DATE (TOP OF FORM) */}
-                <div className="p-3.5 bg-[#DFBFBA]/15 border border-[#DFBFBA]/40 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="p-3.5 bg-red-50 border border-red-200 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div className="flex items-center gap-2.5">
                     <div className="p-1.5 bg-[#660000] text-white rounded-md shrink-0">
                       <Calendar className="w-4 h-4" />
@@ -3310,7 +3310,7 @@ export default function PolicyList({
                           value={form.healthIssueDetails}
                           onChange={handleFormChange}
                           placeholder="e.g. Diabetes, BP, Heart Issue, Surgeries, Asthma"
-                          className="w-full h-[34px] bg-[#DFBFBA]/15 border border-[#DFBFBA]/60 rounded-md px-2.5 text-xs text-slate-900 focus:outline-hidden focus:border-[#660000] focus:ring-1 focus:ring-[#660000] font-medium transition"
+                          className="w-full h-[34px] bg-red-50/50 border border-red-200 rounded-md px-2.5 text-xs text-slate-900 focus:outline-hidden focus:border-[#660000] focus:ring-1 focus:ring-[#660000] font-medium transition"
                         />
                       </div>
                     )}
@@ -3512,7 +3512,7 @@ export default function PolicyList({
                                     return { ...prev, familyMembersList: list };
                                   });
                                 }}
-                                className="w-full h-[32px] px-2.5 bg-[#DFBFBA]/15 border border-[#DFBFBA]/60 rounded-md text-xs text-slate-900 font-medium focus:outline-hidden focus:border-[#660000] focus:ring-1 focus:ring-[#660000] transition"
+                                className="w-full h-[32px] px-2.5 bg-red-50/50 border border-red-200 rounded-md text-xs text-slate-900 font-medium focus:outline-hidden focus:border-[#660000] focus:ring-1 focus:ring-[#660000] transition"
                               />
                             </div>
                           )}
@@ -3553,7 +3553,7 @@ export default function PolicyList({
                           Insurance Company <span className="text-[#660000]">*</span>
                         </label>
                         {masterCompanies.length === 0 && !form.companyName ? (
-                          <div className="h-[34px] px-2.5 bg-[#DFBFBA]/20 border border-[#DFBFBA]/60 rounded-md text-[10px] text-[#660000] font-bold flex items-center leading-tight">
+                          <div className="h-[34px] px-2.5 bg-red-100 border border-red-200 rounded-md text-[10px] text-[#660000] font-bold flex items-center leading-tight">
                             No active insurance companies available. Contact Admin.
                           </div>
                         ) : (
@@ -3790,7 +3790,7 @@ export default function PolicyList({
                     const commAmount = applicableRate !== undefined && form.premiumAmount ? Math.round((Number(form.premiumAmount) * applicableRate) / 100) : 0;
                     if (!form.companyName) return null;
                     return (
-                      <div className="p-3 bg-[#DFBFBA]/15 border border-[#DFBFBA]/40 rounded-md text-xs space-y-1.5 mt-2">
+                      <div className="p-3 bg-red-50 border border-red-200 rounded-md text-xs space-y-1.5 mt-2">
                         <div className="text-[10px] font-extrabold text-slate-700 uppercase tracking-wider flex items-center justify-between border-b border-slate-200/60 pb-1">
                           <span>COMMISSION SUMMARY PREVIEW</span>
                           <span className="font-mono">{applicableRate !== undefined ? `${applicableRate}% Rate` : "Not Configured"}</span>
@@ -3976,7 +3976,7 @@ export default function PolicyList({
                             onClick={() => setForm(prev => ({ ...prev, financeType: "Company EMI" }))}
                             className={`px-3 py-1 rounded-md text-xs font-bold flex items-center gap-2 transition-all cursor-pointer ${
                               form.financeType === "Company EMI"
-                                ? "bg-[#DFBFBA]/40 text-[#660000] border border-[#DFBFBA]"
+                                ? "bg-red-100 text-[#660000] border border-red-300 font-bold"
                                 : "text-slate-700 hover:bg-slate-100 border border-transparent"
                             }`}
                           >
@@ -3988,7 +3988,7 @@ export default function PolicyList({
                             onClick={() => setForm(prev => ({ ...prev, financeType: "Vendor Finance" }))}
                             className={`px-3 py-1 rounded-md text-xs font-bold flex items-center gap-2 transition-all cursor-pointer ${
                               form.financeType === "Vendor Finance"
-                                ? "bg-[#DFBFBA]/40 text-[#660000] border border-[#DFBFBA]"
+                                ? "bg-red-100 text-[#660000] border border-red-300 font-bold"
                                 : "text-slate-700 hover:bg-slate-100 border border-transparent"
                             }`}
                           >
@@ -4250,7 +4250,7 @@ export default function PolicyList({
                   {/* Drop area & Upload button */}
                   <div
                     onClick={() => fileInputRef.current?.click()}
-                    className="border-2 border-dashed border-slate-300 hover:border-[#660000] hover:bg-[#DFBFBA]/10 transition bg-white rounded-md p-4 text-center cursor-pointer relative group"
+                    className="border-2 border-dashed border-slate-300 hover:border-[#660000] hover:bg-red-50/50 transition bg-white rounded-md p-4 text-center cursor-pointer relative group"
                   >
                     <input
                       ref={fileInputRef}
@@ -4293,7 +4293,7 @@ export default function PolicyList({
                                     {doc.originalName || doc.storedName || "Document"}
                                   </span>
                                   <div className="flex items-center gap-1.5 text-[10px] text-slate-500 font-mono mt-0.5">
-                                    <span className="px-1 py-0.2 rounded border bg-[#DFBFBA]/20 border-[#DFBFBA]/60 text-[#660000] font-sans font-bold text-[9px]">
+                                    <span className="px-1 py-0.2 rounded border bg-red-100 border-red-200 text-[#660000] font-sans font-bold text-[9px]">
                                       {badge.label}
                                     </span>
                                     {sizeStr && <span>• {sizeStr}</span>}
@@ -4314,7 +4314,7 @@ export default function PolicyList({
                                 <a
                                   href={downloadUrl}
                                   download={doc.originalName || "document"}
-                                  className="px-2 py-1 bg-[#DFBFBA]/25 hover:bg-[#DFBFBA]/40 text-[#660000] border border-[#DFBFBA]/50 rounded-md text-[11px] font-bold transition cursor-pointer"
+                                  className="px-2 py-1 bg-red-100 hover:bg-red-200 text-[#660000] border border-red-200 rounded-md text-[11px] font-bold transition cursor-pointer"
                                   title="Download"
                                 >
                                   Download
@@ -4338,7 +4338,7 @@ export default function PolicyList({
 
                         {/* Pending Upload Files */}
                         {pendingFiles.map((file, idx) => (
-                          <div key={`pending_${idx}`} className="flex items-center justify-between p-2.5 bg-[#DFBFBA]/15 border border-[#DFBFBA]/40 rounded-md text-xs shadow-2xs">
+                          <div key={`pending_${idx}`} className="flex items-center justify-between p-2.5 bg-red-50 border border-red-200 rounded-md text-xs shadow-2xs">
                             <div className="flex items-center gap-2 min-w-0 pr-2">
                               <FileText className="w-4 h-4 text-[#660000] shrink-0" />
                               <div className="min-w-0">
@@ -4434,7 +4434,7 @@ export default function PolicyList({
                 <div className="space-y-2.5">
                   <label className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition ${
                     newBusinessSubtypeChoice === "FRESH"
-                      ? "bg-[#DFBFBA]/40 border-[#DFBFBA] text-slate-900 font-bold shadow-2xs"
+                      ? "bg-red-100 border-red-300 text-slate-900 font-bold shadow-2xs ring-1 ring-red-200"
                       : "bg-white border-slate-200 hover:bg-slate-50 text-slate-800"
                   }`}>
                     <input
@@ -4453,7 +4453,7 @@ export default function PolicyList({
 
                   <label className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition ${
                     newBusinessSubtypeChoice === "PORT"
-                      ? "bg-[#DFBFBA]/40 border-[#DFBFBA] text-slate-900 font-bold shadow-2xs"
+                      ? "bg-red-100 border-red-300 text-slate-900 font-bold shadow-2xs ring-1 ring-red-200"
                       : "bg-white border-slate-200 hover:bg-slate-50 text-slate-800"
                   }`}>
                     <input

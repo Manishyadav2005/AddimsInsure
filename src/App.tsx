@@ -459,7 +459,9 @@ export default function App() {
               <div className="space-y-0.5">
                 {section.items.map(item => {
                   const IconComponent = item.icon;
-                  const isActive = activeTab === item.id || (item.id === "new_business" && (activeTab === "fresh" || activeTab === "port"));
+                  const isSelfActive = activeTab === item.id;
+                  const isChildParentActive = item.id === "new_business" && (activeTab === "fresh" || activeTab === "port");
+                  const isActive = isSelfActive || isChildParentActive;
                   return (
                     <div key={item.id} className="space-y-0.5">
                       <button
@@ -469,28 +471,30 @@ export default function App() {
                         }}
                         title={isSidebarCollapsed ? item.label : undefined}
                         className={`w-full rounded-xl text-xs font-medium flex items-center transition-all ${isSidebarCollapsed ? "justify-center p-2.5" : "px-3 py-2 justify-between text-left"
-                          } ${isActive
-                            ? "bg-pink-50/80 text-pink-900 border border-pink-200/90 shadow-2xs font-bold"
-                            : "text-slate-600 hover:bg-pink-50/50 hover:text-pink-800"
+                          } ${isSelfActive
+                            ? "bg-red-100 text-red-950 border border-red-300 shadow-2xs font-bold"
+                            : isChildParentActive
+                            ? "bg-red-50 text-red-900 border border-red-200/90 shadow-2xs font-bold"
+                            : "text-slate-600 hover:bg-red-50/70 hover:text-red-900"
                           }`}
                       >
                         <div className={`flex items-center ${isSidebarCollapsed ? "justify-center" : "gap-2.5"}`}>
-                          <IconComponent className={`w-4.5 h-4.5 shrink-0 ${isActive ? "text-pink-600" : "text-slate-400"}`} />
+                          <IconComponent className={`w-4.5 h-4.5 shrink-0 ${isActive ? "text-red-600" : "text-slate-400"}`} />
                           {!isSidebarCollapsed && <span>{item.label}</span>}
                         </div>
                         {!isSidebarCollapsed && item.badgeCount !== undefined && item.badgeCount > 0 && (
-                          <span className="bg-pink-100 border border-pink-200 text-[10px] text-pink-800 px-1.5 py-0.2 rounded font-mono font-semibold">
+                          <span className="bg-red-100 border border-red-200 text-[10px] text-red-800 px-1.5 py-0.2 rounded font-mono font-semibold">
                             {item.badgeCount}
                           </span>
                         )}
                         {!isSidebarCollapsed && item.children && (
-                          <ChevronRight className={`w-3.5 h-3.5 transition-transform ${isActive ? "rotate-90 text-pink-600" : "text-slate-400"}`} />
+                          <ChevronRight className={`w-3.5 h-3.5 transition-transform ${isActive ? "rotate-90 text-red-600" : "text-slate-400"}`} />
                         )}
                       </button>
 
                       {/* Render Children (Fresh / Port) */}
                       {item.children && isActive && !isSidebarCollapsed && (
-                        <div className="ml-5 pl-3 border-l-2 border-pink-200/80 my-1 space-y-1">
+                        <div className="ml-5 pl-3 border-l-2 border-red-300 my-1 space-y-1">
                           {item.children.map(child => {
                             const isChildActive = activeTab === child.id;
                             return (
@@ -501,11 +505,11 @@ export default function App() {
                                   setIsMobileMenuOpen(false);
                                 }}
                                 className={`w-full px-2.5 py-1.5 rounded-lg text-xs flex items-center gap-2 transition cursor-pointer ${isChildActive
-                                  ? "bg-pink-100/90 text-pink-900 font-extrabold shadow-2xs"
-                                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 font-semibold"
+                                  ? "bg-red-100 text-red-950 font-extrabold border border-red-300/80 shadow-2xs"
+                                  : "text-slate-600 hover:text-slate-900 hover:bg-red-50 font-semibold"
                                   }`}
                               >
-                                <span className={`w-1.5 h-1.5 rounded-full ${isChildActive ? "bg-pink-600 animate-pulse" : "bg-slate-300"}`} />
+                                <span className={`w-2 h-2 rounded-full transition-all ${isChildActive ? "bg-red-600 ring-2 ring-red-200 animate-pulse" : "bg-slate-300"}`} />
                                 {child.label}
                               </button>
                             );
@@ -542,7 +546,7 @@ export default function App() {
         <button
           onClick={handleLogOut}
           title={isSidebarCollapsed ? "Sign Out" : undefined}
-          className={`w-full py-1 bg-slate-50 hover:bg-pink-50 text-slate-600 hover:text-pink-700 border border-slate-200 hover:border-pink-200 rounded-md text-[10px] font-bold flex items-center justify-center ${isSidebarCollapsed ? "px-0" : "gap-1"
+          className={`w-full py-1 bg-slate-50 hover:bg-red-50 text-slate-600 hover:text-red-700 border border-slate-200 hover:border-red-200 rounded-md text-[10px] font-bold flex items-center justify-center ${isSidebarCollapsed ? "px-0" : "gap-1"
             } transition cursor-pointer shadow-2xs`}
         >
           <LogOut className="w-3 h-3 shrink-0" />
@@ -554,7 +558,7 @@ export default function App() {
   );
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] flex text-slate-900 font-sans selection:bg-pink-600 selection:text-white">
+    <div className="min-h-screen bg-[#f8fafc] flex text-slate-900 font-sans selection:bg-red-600 selection:text-white">
 
       {/* Desktop Fixed Sidebar */}
       <aside className={`hidden lg:block ${isSidebarCollapsed ? "w-20" : "w-64"} border-r border-slate-200 shrink-0 fixed top-0 bottom-0 left-0 z-30 transition-all duration-300 ease-in-out bg-white`}>
@@ -631,8 +635,8 @@ export default function App() {
 
             <div className="flex items-center gap-3">
               {/* Connection Status Badge */}
-              <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 bg-pink-50 text-pink-700 border border-pink-200/80 rounded-full text-xs font-medium">
-                <Cloud className="w-3.5 h-3.5 text-pink-600" />
+              <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 bg-red-50 text-red-700 border border-red-200/90 rounded-full text-xs font-medium">
+                <Cloud className="w-3.5 h-3.5 text-red-600" />
                 <span>Cloud Synced</span>
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               </div>
@@ -641,10 +645,10 @@ export default function App() {
               <button
                 onClick={fetchMongoData}
                 disabled={dbLoading}
-                className="p-2 text-slate-600 hover:bg-slate-100 rounded-lg transition"
+                className="p-2 text-slate-600 hover:bg-red-50 rounded-lg transition"
                 title="Refresh Ledger Data"
               >
-                <RefreshCw className={`w-4.5 h-4.5 ${dbLoading ? "animate-spin text-pink-600" : ""}`} />
+                <RefreshCw className={`w-4.5 h-4.5 ${dbLoading ? "animate-spin text-red-600" : ""}`} />
               </button>
             </div>
           </header>

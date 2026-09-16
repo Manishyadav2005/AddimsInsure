@@ -2066,7 +2066,7 @@ export default function ReportsDashboard({ user }: ReportsDashboardProps) {
                   value={data.birthdayStats.birthdaysToday}
                   subtext="Customers celebrating today"
                   icon={Award}
-                  colorClass={{ text: "text-pink-600", border: "border-pink-200", iconBg: "bg-pink-50" }}
+                  colorClass={{ text: "text-red-600", border: "border-red-200", iconBg: "bg-red-50" }}
                   delay={0}
                 />
                 <StatCard

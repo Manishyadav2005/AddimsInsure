@@ -15,7 +15,7 @@ const TYPE_LABELS: Record<string, { label: string; bg: string; text: string; bor
   RenewalReminder: { label: "Renewal Reminder", bg: "bg-teal-50", text: "text-teal-800", border: "border-teal-200" },
   ExpiryAlert: { label: "Premium Due Reminder", bg: "bg-amber-50", text: "text-amber-800", border: "border-amber-200" },
   PremiumDue: { label: "Premium Due Reminder", bg: "bg-amber-50", text: "text-amber-800", border: "border-amber-200" },
-  BirthdayWish: { label: "Birthday Wish", bg: "bg-pink-50", text: "text-pink-800", border: "border-pink-200" },
+  BirthdayWish: { label: "Birthday Wish", bg: "bg-red-50", text: "text-red-800", border: "border-red-200" },
   Welcome: { label: "Policy Notification", bg: "bg-sky-50", text: "text-sky-800", border: "border-sky-200" },
   Onboarding: { label: "Policy Notification", bg: "bg-sky-50", text: "text-sky-800", border: "border-sky-200" },
   PaymentReminder: { label: "Payment Reminder", bg: "bg-indigo-50", text: "text-indigo-800", border: "border-indigo-200" },

@@ -305,7 +305,7 @@ export function TeamPerformanceDistributionCard({
             badgeBg = "bg-emerald-50 text-emerald-800 border-emerald-200";
             barBg = "bg-emerald-600";
           } else if (pct >= 50) {
-            badgeBg = "bg-[#DFBFBA]/30 text-[#660000] border-[#DFBFBA]/80";
+            badgeBg = "bg-red-100 text-[#660000] border-red-300";
             barBg = "bg-[#660000]";
           }
 

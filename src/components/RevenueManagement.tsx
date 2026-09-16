@@ -711,7 +711,7 @@ export default function RevenueManagement({ user }: RevenueManagementProps) {
               <button
                 type="button"
                 onClick={handleResetFilters}
-                className="px-2.5 py-1 bg-[#DFBFBA]/25 hover:bg-[#DFBFBA]/45 text-[#660000] border border-[#DFBFBA]/80 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer shadow-2xs"
+                className="px-2.5 py-1 bg-red-100 hover:bg-red-200 text-[#660000] border border-red-300 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer shadow-2xs"
                 title="Reset all filters to default"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
@@ -1062,7 +1062,7 @@ export default function RevenueManagement({ user }: RevenueManagementProps) {
                           {canEditCommission && (
                             <button
                               onClick={() => handleOpenCommissionModal(p)}
-                              className="p-1.5 bg-[#DFBFBA]/20 hover:bg-[#DFBFBA]/40 text-[#660000] hover:text-[#500000] border border-[#DFBFBA]/60 rounded-lg text-xs font-semibold cursor-pointer transition flex items-center justify-center shadow-2xs"
+                              className="p-1.5 bg-red-100 hover:bg-red-200 text-[#660000] hover:text-[#500000] border border-red-200 rounded-lg text-xs font-semibold cursor-pointer transition flex items-center justify-center shadow-2xs"
                               title="Edit Policy Commission"
                             >
                               <Edit3 className="w-4 h-4" />

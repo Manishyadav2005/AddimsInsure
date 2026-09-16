@@ -1060,10 +1060,10 @@ const [isDetailsOpen, setIsDetailsOpen] = useState(false);
                   const percent = Math.round((item.value / totalShareValue) * 100);
                   const colors = [
                     "bg-[#660000]",
-                    "bg-[#DFBFBA]",
-                    "bg-sky-500",
-                    "bg-indigo-500",
-                    "bg-purple-500"
+                    "bg-red-500",
+                    "bg-rose-600",
+                    "bg-amber-600",
+                    "bg-slate-700"
                   ];
                   return (
                     <div key={item.name} className="flex items-center gap-4">
