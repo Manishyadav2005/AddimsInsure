@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import ConfirmModal from "./ConfirmModal";
+import BrandLogo from "./BrandLogo";
 
 interface SuperAdminDashboardProps {
   user: UserSession;
@@ -184,20 +185,18 @@ export default function SuperAdminDashboard({ user, onLogOut }: SuperAdminDashbo
       }}
     >
       {/* Ambient background glow highlights */}
-      <div className="absolute w-[700px] h-[700px] bg-gradient-to-tr from-[#DFBFBA]/20 to-[#660000]/15 rounded-full blur-[130px] pointer-events-none -translate-y-32 left-1/2 -translate-x-1/2" />
+      <div className="absolute w-[700px] h-[700px] bg-gradient-to-tr from-blue-600/10 to-cyan-500/10 rounded-full blur-[130px] pointer-events-none -translate-y-32 left-1/2 -translate-x-1/2" />
 
       {/* Header Bar */}
       <header className="bg-white/90 backdrop-blur-xl border-b border-slate-200 px-8 py-4 flex items-center justify-between sticky top-0 z-30 shadow-xs">
         <div className="flex items-center gap-3.5">
-          <div className="w-11 h-11 bg-[#660000] rounded-2xl flex items-center justify-center text-white shadow-xs">
-            <Shield className="w-6 h-6 stroke-[2.2]" />
-          </div>
+          <BrandLogo size="md" className="shrink-0" />
           <div>
             <div className="flex items-center gap-2.5">
               <h1 className="text-xl font-black tracking-tight text-slate-900 font-sans">
-                Addims <span className="text-[#660000]">InSure</span> Owner Portal
+                Addims <span className="text-blue-600">InSure</span> Owner Portal
               </h1>
-              <span className="text-[10px] font-mono font-extrabold bg-[#DFBFBA] text-[#660000] px-2.5 py-0.5 rounded-full border border-[#DFBFBA] shadow-2xs">
+              <span className="text-[10px] font-mono font-extrabold bg-blue-50 text-blue-700 px-2.5 py-0.5 rounded-full border border-blue-200 shadow-2xs">
                 SUPER ADMIN
               </span>
             </div>
@@ -212,13 +211,13 @@ export default function SuperAdminDashboard({ user, onLogOut }: SuperAdminDashbo
             className="p-2.5 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-2xl transition cursor-pointer border border-slate-200 shadow-2xs"
             title="Refresh Platform Data"
           >
-            <RefreshCw className={`w-4.5 h-4.5 ${loading ? "animate-spin text-[#660000]" : ""}`} />
+            <RefreshCw className={`w-4.5 h-4.5 ${loading ? "animate-spin text-blue-600" : ""}`} />
           </button>
 
           <div className="h-7 w-px bg-slate-200" />
 
           <div className="flex items-center gap-2.5 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-2xl">
-            <div className="w-7 h-7 rounded-xl bg-[#660000] text-white font-black text-xs flex items-center justify-center shadow-xs">
+            <div className="w-7 h-7 rounded-xl bg-blue-600 text-white font-black text-xs flex items-center justify-center shadow-xs">
               SA
             </div>
             <span className="font-extrabold text-xs text-slate-800 hidden sm:inline">{user.email}</span>
@@ -307,7 +306,7 @@ export default function SuperAdminDashboard({ user, onLogOut }: SuperAdminDashbo
 
           <button
             onClick={() => setIsCreateModalOpen(true)}
-            className="w-full sm:w-auto px-4 py-2.5 bg-[#660000] hover:bg-[#540000] text-white font-bold text-xs tracking-wider uppercase rounded-xl transition-all shadow-2xs flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs tracking-wider uppercase rounded-xl transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer"
           >
             <Plus className="w-4 h-4 stroke-[3]" />
             Create Client Company
@@ -542,7 +541,7 @@ export default function SuperAdminDashboard({ user, onLogOut }: SuperAdminDashbo
                   <button
                     type="submit"
                     disabled={formLoading}
-                    className="px-6 py-3 bg-[#660000] hover:bg-[#540000] text-white font-bold text-xs uppercase tracking-wider rounded-2xl transition shadow-2xs cursor-pointer"
+                    className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider rounded-2xl transition shadow-sm cursor-pointer"
                   >
                     {formLoading ? "Creating..." : "Create & Activate Company"}
                   </button>

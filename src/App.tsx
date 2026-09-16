@@ -31,6 +31,7 @@ import HighlightsView from "./components/HighlightsView";
 import HighlightsManagement from "./components/HighlightsManagement";
 import AdvisorManagement from "./components/AdvisorManagement";
 import AccessDeniedPage from "./components/AccessDeniedPage";
+import BrandLogo from "./components/BrandLogo";
 import { hasPermission as checkPermission } from "./lib/permissions";
 
 
@@ -361,18 +362,16 @@ export default function App() {
       {/* 1. TOP SECTION (Fixed - Centered Logo) */}
       <div className={`flex items-center shrink-0 mb-4 ${isSidebarCollapsed ? "justify-center" : "px-1"}`}>
         <div className="flex items-center gap-2.5 min-w-0">
-          <div className="p-2 bg-pink-600 text-white rounded-xl shadow-2xs shrink-0" title="Addims InSure">
-            <Shield className="w-5 h-5" />
-          </div>
+          <BrandLogo size="sm" className="shrink-0" />
           {!isSidebarCollapsed && (
             <div className="min-w-0">
-              <span className="text-base font-extrabold tracking-tight text-slate-900 flex items-center gap-1 leading-none">
-                Addims <span className="text-pink-600">InSure</span>
+              <span className="text-base font-black tracking-tight text-slate-900 flex items-center gap-1 leading-none">
+                Addims <span className="text-blue-600">InSure</span>
               </span>
               <span className="text-[10px] text-slate-500 font-medium tracking-tight mt-1 block truncate" title="Smart Insurance CRM">
                 Smart Insurance CRM
               </span>
-              <span className="text-[9px] text-pink-600 font-mono mt-0.5 block font-bold">
+              <span className="text-[9px] text-blue-600 font-mono mt-0.5 block font-bold">
                 {user.role === "ADMIN" ? "ADMIN PORTAL" : user.role === "OPERATOR" ? "OPERATOR PORTAL" : "PORTAL"}
               </span>
             </div>
