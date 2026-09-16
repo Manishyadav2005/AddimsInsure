@@ -12,6 +12,7 @@ interface SettingsTabProps {
   setWhatsAppSettings: (settings: WhatsAppSettings) => void;
   onSave: () => void;
   user?: any;
+  onCompanyProfileUpdate?: (profile: AgencyProfile) => void;
 }
 
 export default function SettingsTab({ 
@@ -20,7 +21,8 @@ export default function SettingsTab({
   whatsAppSettings, 
   setWhatsAppSettings,
   onSave,
-  user
+  user,
+  onCompanyProfileUpdate
 }: SettingsTabProps) {
   const [activeSubTab, setActiveSubTab] = useState<"company" | "mail" | "whatsapp" | "templates">("company");
   const [saveStatus, setSaveStatus] = useState<string | null>(null);
@@ -131,6 +133,14 @@ export default function SettingsTab({
       const res = await saveAgencyProfile({ ...companyProfile, tenantId });
       if (res.success && res.profile) {
         setCompanyProfile(res.profile);
+        localStorage.setItem("cached_company_name", res.profile.companyName || "");
+        if (res.profile.logoUrl) {
+          localStorage.setItem("cached_company_logo", res.profile.logoUrl);
+        }
+        if (onCompanyProfileUpdate) {
+          onCompanyProfileUpdate(res.profile);
+        }
+        window.dispatchEvent(new CustomEvent("agencyProfileUpdated", { detail: res.profile }));
       }
       setSaveStatus("Company Profile saved successfully to MongoDB Atlas!");
       setTimeout(() => setSaveStatus(null), 4000);
@@ -160,6 +170,11 @@ export default function SettingsTab({
       const data = await res.json();
       if (data.success && data.logoUrl) {
         setCompanyProfile(prev => ({ ...prev, logoUrl: data.logoUrl }));
+        localStorage.setItem("cached_company_logo", data.logoUrl);
+        if (onCompanyProfileUpdate) {
+          onCompanyProfileUpdate({ ...companyProfile, logoUrl: data.logoUrl });
+        }
+        window.dispatchEvent(new CustomEvent("agencyProfileUpdated", { detail: { ...companyProfile, logoUrl: data.logoUrl } }));
         setSaveStatus("Company Logo uploaded successfully!");
         setTimeout(() => setSaveStatus(null), 3000);
       }

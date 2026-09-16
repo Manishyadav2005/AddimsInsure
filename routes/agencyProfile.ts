@@ -2,7 +2,8 @@ import { Router } from "express";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
-import { AgencyProfile } from "../models";
+import { AgencyProfile, Tenant } from "../models";
+import mongoose from "mongoose";
 
 const router = Router();
 
@@ -113,6 +114,14 @@ router.put("/", async (req, res) => {
       { $set: updateFields },
       { upsert: true, new: true }
     );
+
+    // Synchronize company name with Tenant record as well
+    if (tenantId) {
+      if (mongoose.Types.ObjectId.isValid(tenantId)) {
+        await Tenant.findByIdAndUpdate(tenantId, { $set: { name: companyName } }).catch(() => {});
+      }
+      await Tenant.findOneAndUpdate({ adminUserId: tenantId }, { $set: { name: companyName } }).catch(() => {});
+    }
 
     res.json({ success: true, profile: updated });
   } catch (err: any) {

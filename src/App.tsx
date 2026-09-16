@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { api, UserSession } from "./lib/api";
+import { api, UserSession, fetchAgencyProfile } from "./lib/api";
 import { Policy, EmailLog, MailSettings, WhatsAppSettings } from "./types";
 
 // Component Imports
@@ -70,6 +70,53 @@ export default function App() {
   const [isSyncModalOpen, setIsSyncModalOpen] = useState(false);
   const [externalFilter, setExternalFilter] = useState<string | undefined>(undefined);
   const [dbConnected, setDbConnected] = useState(false);
+
+  // Dynamic Company Branding State (from Gateway Settings)
+  const [companyDisplayName, setCompanyDisplayName] = useState<string>(() => {
+    return localStorage.getItem("cached_company_name") || "";
+  });
+  const [companyLogo, setCompanyLogo] = useState<string>(() => {
+    return localStorage.getItem("cached_company_logo") || "";
+  });
+
+  // Fetch Company / Agency Profile for dynamic branding
+  useEffect(() => {
+    if (user) {
+      const tid = user.tenantId || user.uid;
+      if (tid) {
+        fetchAgencyProfile(tid)
+          .then((data) => {
+            const name = data?.companyName || data?.agencyName || user.tenantName;
+            if (name) {
+              setCompanyDisplayName(name);
+              localStorage.setItem("cached_company_name", name);
+            }
+            if (data?.logoUrl) {
+              setCompanyLogo(data.logoUrl);
+              localStorage.setItem("cached_company_logo", data.logoUrl);
+            }
+          })
+          .catch(() => {});
+      }
+    }
+  }, [user]);
+
+  // Listen to profile updates from SettingsTab
+  useEffect(() => {
+    const handleProfileUpdate = (e: any) => {
+      const profile = e.detail;
+      if (profile?.companyName) {
+        setCompanyDisplayName(profile.companyName);
+        localStorage.setItem("cached_company_name", profile.companyName);
+      }
+      if (profile?.logoUrl !== undefined) {
+        setCompanyLogo(profile.logoUrl || "");
+        localStorage.setItem("cached_company_logo", profile.logoUrl || "");
+      }
+    };
+    window.addEventListener("agencyProfileUpdated", handleProfileUpdate);
+    return () => window.removeEventListener("agencyProfileUpdated", handleProfileUpdate);
+  }, []);
 
   // Load Mail & WhatsApp Meta configurations
   const [mailSettings, setMailSettings] = useState<MailSettings>(() => {
@@ -210,6 +257,8 @@ export default function App() {
     setUser(null);
     setPolicies([]);
     setEmails([]);
+    setCompanyDisplayName("");
+    setCompanyLogo("");
   };
 
   // Calculate Urgent Dues
@@ -359,17 +408,30 @@ export default function App() {
         )}
       </button>
 
-      {/* 1. TOP SECTION (Fixed - Centered Logo) */}
+      {/* 1. TOP SECTION (Fixed - Centered Logo & Dynamic Company Brand) */}
       <div className={`flex items-center shrink-0 mb-4 ${isSidebarCollapsed ? "justify-center" : "px-1"}`}>
         <div className="flex items-center gap-2.5 min-w-0">
-          <BrandLogo size="sm" className="shrink-0" />
+          {companyLogo ? (
+            <img 
+              src={companyLogo} 
+              alt={companyDisplayName || "Company Logo"} 
+              className="w-9 h-9 rounded-xl object-contain bg-slate-50 border border-slate-200 p-0.5 shrink-0 shadow-2xs" 
+            />
+          ) : (
+            <BrandLogo size="sm" className="shrink-0" />
+          )}
           {!isSidebarCollapsed && (
-            <div className="min-w-0">
-              <span className="text-base font-black tracking-tight text-slate-900 flex items-center gap-1 leading-none">
-                Addims <span className="text-blue-600">InSure</span>
+            <div className="min-w-0 flex-1">
+              <span 
+                className="text-base font-black tracking-tight text-slate-900 flex items-center gap-1 leading-tight truncate uppercase" 
+                title={companyDisplayName || "Addims InSure"}
+              >
+                {companyDisplayName || (
+                  <>Addims <span className="text-blue-600">InSure</span></>
+                )}
               </span>
-              <span className="text-[10px] text-slate-500 font-medium tracking-tight mt-1 block truncate" title="Smart Insurance CRM">
-                Smart Insurance CRM
+              <span className="text-[10px] text-slate-500 font-medium tracking-tight mt-0.5 block truncate" title="Addims InSure Platform">
+                {companyDisplayName ? "Addims InSure Platform" : "Smart Insurance CRM"}
               </span>
               <span className="text-[9px] text-blue-600 font-mono mt-0.5 block font-bold">
                 {user.role === "ADMIN" ? "ADMIN PORTAL" : user.role === "OPERATOR" ? "OPERATOR PORTAL" : "PORTAL"}
@@ -562,7 +624,7 @@ export default function App() {
                   {activeTab === "settings" && "Integration & Gateway Settings"}
                 </h1>
                 <p className="text-xs text-slate-500 font-normal hidden sm:block">
-                  Secure Multi-Tenant Policy Ledger & Customer Renewal Hub
+                  {companyDisplayName ? `${companyDisplayName} • Secure Policy Ledger & Customer Renewal Hub` : "Secure Multi-Tenant Policy Ledger & Customer Renewal Hub"}
                 </p>
               </div>
             </div>
@@ -778,7 +840,7 @@ export default function App() {
 
           {activeTab === "advisors" && (
             checkPermission(user, ["advisors.view", "advisors.create", "advisors.edit", "advisors.manage", "team.view", "team.create"]) ||
-            ["SUPER_ADMIN", "ADMIN", "TENANT_ADMIN"].includes((user.role || "").toUpperCase()) ? (
+              ["SUPER_ADMIN", "ADMIN", "TENANT_ADMIN"].includes((user.role || "").toUpperCase()) ? (
               <AdvisorManagement user={user} />
             ) : <AccessDeniedPage moduleName="Advisor Master Management" onGoHome={() => setActiveTab("dashboard")} />
           )}
@@ -834,6 +896,10 @@ export default function App() {
                 setWhatsAppSettings={setWhatsAppSettings}
                 onSave={handleSettingsSave}
                 user={user}
+                onCompanyProfileUpdate={(profile) => {
+                  if (profile?.companyName) setCompanyDisplayName(profile.companyName);
+                  if (profile?.logoUrl !== undefined) setCompanyLogo(profile.logoUrl || "");
+                }}
               />
             ) : <AccessDeniedPage moduleName="Gateway & Integration Settings" onGoHome={() => setActiveTab("dashboard")} />
           )}

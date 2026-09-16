@@ -32,18 +32,18 @@ export default function BrandLogo({
           className="w-full h-full drop-shadow-[0_8px_16px_rgba(37,99,235,0.3)] transition-transform duration-300 hover:scale-105"
         >
           <defs>
-            {/* Primary Shield Gradient: Deep Royal Blue to Electric Sky to Vivid Cyan */}
+            {/* Primary Shield Gradient: Deep Burgundy & Rich Maroon */}
             <linearGradient id="addimsShieldGrad" x1="6" y1="6" x2="58" y2="60" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#1D4ED8" />
-              <stop offset="45%" stopColor="#2563EB" />
-              <stop offset="85%" stopColor="#0284C7" />
-              <stop offset="100%" stopColor="#06B6D4" />
+              <stop offset="0%" stopColor="#4A0000" />
+              <stop offset="45%" stopColor="#660000" />
+              <stop offset="80%" stopColor="#7A1111" />
+              <stop offset="100%" stopColor="#931A1A" />
             </linearGradient>
 
-            {/* Inner "A" Monogram Gradient: Crisp Ice White to Soft Cyan */}
+            {/* Inner "A" Monogram Gradient: Crisp White to Champagne Rose */}
             <linearGradient id="addimsMonogramGrad" x1="32" y1="14" x2="32" y2="48" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stopColor="#FFFFFF" />
-              <stop offset="100%" stopColor="#E0F2FE" />
+              <stop offset="100%" stopColor="#DFBFBA" />
             </linearGradient>
 
             {/* Glow / Specular Reflection Gradient */}

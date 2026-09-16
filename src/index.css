@@ -6,76 +6,75 @@
   --color-slate-200: #cbd5e1;
   --color-slate-300: #94a3b8;
 
-  --color-brand: #2563eb;
-  --color-brand-light: #eff6ff;
-  --color-brand-dark: #1e40af;
-  --color-brand-accent: #06b6d4;
+  --color-brand: #660000;
+  --color-brand-light: #DFBFBA;
 
-  /* Primary Royal Electric Blue Theme Scale */
-  --color-pink-50: #eff6ff;
-  --color-pink-100: #dbeafe;
-  --color-pink-200: #bfdbfe;
-  --color-pink-300: #93c5fd;
-  --color-pink-400: #60a5fa;
-  --color-pink-500: #3b82f6;
-  --color-pink-600: #2563eb;
-  --color-pink-700: #1d4ed8;
-  --color-pink-800: #1e40af;
-  --color-pink-900: #1e3a8a;
+  --color-pink-50: #DFBFBA;
+  --color-pink-100: #DFBFBA;
+  --color-pink-200: #DFBFBA;
+  --color-pink-300: #DFBFBA;
+  --color-pink-400: #660000;
+  --color-pink-500: #660000;
+  --color-pink-600: #660000;
+  --color-pink-700: #660000;
+  --color-pink-800: #660000;
+  --color-pink-900: #660000;
 
-  /* Secondary Vibrant Cyan & Teal Theme Scale */
-  --color-rose-50: #ecfeff;
-  --color-rose-100: #cffafe;
-  --color-rose-200: #a5f3fc;
-  --color-rose-300: #67e8f9;
-  --color-rose-400: #22d3ee;
-  --color-rose-500: #06b6d4;
-  --color-rose-600: #0891b2;
-  --color-rose-700: #0e7490;
-  --color-rose-800: #155e75;
-  --color-rose-900: #164e63;
+  --color-rose-50: #DFBFBA;
+  --color-rose-100: #DFBFBA;
+  --color-rose-200: #DFBFBA;
+  --color-rose-300: #DFBFBA;
+  --color-rose-400: #660000;
+  --color-rose-500: #660000;
+  --color-rose-600: #660000;
+  --color-rose-700: #660000;
+  --color-rose-800: #660000;
+  --color-rose-900: #660000;
 
-  /* Natural Teal / Emerald scale for Success */
-  --color-teal-50: #f0fdf4;
-  --color-teal-100: #dcfce7;
-  --color-teal-200: #bbf7d0;
-  --color-teal-300: #86efac;
-  --color-teal-400: #4ade80;
-  --color-teal-500: #22c55e;
-  --color-teal-600: #16a34a;
-  --color-teal-700: #15803d;
-  --color-teal-800: #166534;
-  --color-teal-900: #14532d;
+  --color-teal-50: #DFBFBA;
+  --color-teal-100: #DFBFBA;
+  --color-teal-200: #DFBFBA;
+  --color-teal-300: #DFBFBA;
+  --color-teal-400: #660000;
+  --color-teal-500: #660000;
+  --color-teal-600: #660000;
+  --color-teal-700: #660000;
+  --color-teal-800: #660000;
+  --color-teal-900: #660000;
 
-  /* Royal Indigo Scale */
-  --color-indigo-50: #eef2ff;
-  --color-indigo-100: #e0e7ff;
-  --color-indigo-200: #c7d2fe;
-  --color-indigo-300: #a5b4fc;
-  --color-indigo-400: #818cf8;
-  --color-indigo-500: #6366f1;
-  --color-indigo-600: #4f46e5;
-  --color-indigo-700: #4338ca;
-  --color-indigo-800: #3730a3;
-  --color-indigo-900: #312e81;
+  --color-indigo-50: #DFBFBA;
+  --color-indigo-100: #DFBFBA;
+  --color-indigo-200: #DFBFBA;
+  --color-indigo-300: #DFBFBA;
+  --color-indigo-400: #660000;
+  --color-indigo-500: #660000;
+  --color-indigo-600: #660000;
+  --color-indigo-700: #660000;
+  --color-indigo-800: #660000;
+  --color-indigo-900: #660000;
 }
 
 @layer utilities {
+
   /* Ultra-thin elegant custom scrollbar */
   .custom-scrollbar::-webkit-scrollbar {
     width: 5px;
     height: 5px;
   }
+
   .custom-scrollbar::-webkit-scrollbar-track {
     background: transparent;
   }
+
   .custom-scrollbar::-webkit-scrollbar-thumb {
     background: rgba(148, 163, 184, 0.35);
     border-radius: 9999px;
   }
+
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: rgba(100, 116, 139, 0.6);
   }
+
   .custom-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: rgba(148, 163, 184, 0.35) transparent;
@@ -87,10 +86,13 @@
     width: 0 !important;
     height: 0 !important;
   }
+
   /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
-    -ms-overflow-style: none !important;  /* IE and Edge */
-    scrollbar-width: none !important;  /* Firefox */
+    -ms-overflow-style: none !important;
+    /* IE and Edge */
+    scrollbar-width: none !important;
+    /* Firefox */
   }
 }
 
