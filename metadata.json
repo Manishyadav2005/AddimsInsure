@@ -1,0 +1,6 @@
+{
+  "name": "Policy Master",
+  "description": "An all-in-one policy management platform to track customers, policy details, premium status, upcoming due dates, monthly renewals, and notification alerts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

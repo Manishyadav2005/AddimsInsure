@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+
+# Production Build
+dist/
+
+# Scratch & Temporary Logs
+scratch/
+*.log
+
+# Uploads
+uploads/*
+!uploads/.gitkeep
+
+# System & IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
